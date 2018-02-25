@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
-                android:text="Lunch" />
+                android:text="Beachside" />
 
             <Button
                 android:id="@+id/dateViewButton"
@@ -36,56 +36,6 @@
         </LinearLayout>
     </FrameLayout>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="48dp"
-        android:hint="search"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/editText" />
-
-
-    <Button
-        android:id="@+id/BeachsideMenu"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editText"
-        android:layout_marginTop="12dp"
-        android:background="#B3E5FC"
-        android:padding="45dp"
-        android:text="Beachside Menu"
-        android:textSize="20sp"
-        android:textStyle="bold|italic" />
-
-    <Button
-        android:id="@+id/HillsideMenu"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/BeachsideMenu"
-        android:background="#B2DFDB"
-        android:padding="45dp"
-        android:text="Hillside menu"
-        android:textSize="20sp"
-        android:textStyle="bold|italic" />
-
-    <Button
-        android:id="@+id/ParksideMenu"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/HillsideMenu"
-        android:background="#FFCCBC"
-        android:padding="45dp"
-        android:text="Parkside Menu"
-        android:textSize="20sp"
-        android:textStyle="bold|italic" />
 
     <FrameLayout
         android:layout_width="match_parent"

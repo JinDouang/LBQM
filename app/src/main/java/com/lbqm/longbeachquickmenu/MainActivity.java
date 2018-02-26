@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -26,6 +28,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button Park = findViewById(R.id.ParksideMenu);
         Park.setOnClickListener(this);
+
+
+        /*
+        Access Calendar
+        */
+        setCalendar();
+
     }
 
     /*
@@ -47,5 +56,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(ParkSide);
                 break;
         }
+    }
+
+    public void setCalendar() {
+        FrameLayout bottomNav = findViewById(R.id.bottomNav);
+        LinearLayout bottomContent = bottomNav.findViewById(R.id.bottomContent);
+        Button Calendar = bottomContent.findViewById(R.id.CalendarViewButton);
+        Calendar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, CalendarActivity.class));
+            }
+        });
+
     }
 }

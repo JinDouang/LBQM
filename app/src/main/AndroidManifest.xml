@@ -20,6 +20,7 @@
         <activity android:name=".BeachsideMenu" />
         <activity android:name=".HillsideMenu" />
         <activity android:name=".ParksideMenu" />
+        <activity android:name=".CalendarActivity" />
     </application>
 
 </manifest>

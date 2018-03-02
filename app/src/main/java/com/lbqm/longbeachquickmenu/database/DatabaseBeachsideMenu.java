@@ -6,11 +6,8 @@ public class DatabaseBeachsideMenu {
 
     private ArrayList<Food>[][][] menu = new ArrayList[5][7][3];
 
-    public void test() {
-        System.out.println("test");
-    }
-
     public ArrayList<Food> getMenu(int cycle, int day, int time){
+        System.out.println("going there");
         return menu[cycle][day][time];
     }
 

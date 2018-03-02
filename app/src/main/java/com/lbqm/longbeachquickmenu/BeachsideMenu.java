@@ -16,7 +16,8 @@ public class BeachsideMenu extends AppCompatActivity {
 
         DatabaseBeachsideMenu db = new DatabaseBeachsideMenu();
 
-        db.test();
+        // Trying to print
+        System.out.println("Beachside: " + db.getMenu(0,0,0));
     }
 
 

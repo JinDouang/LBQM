@@ -16,4 +16,9 @@ public class Food {
     public String getCategory() {
         return category;
     }
+
+    @Override
+    public String toString(){
+        return name;
+    }
 }

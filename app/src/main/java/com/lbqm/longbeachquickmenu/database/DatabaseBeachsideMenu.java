@@ -385,9 +385,6 @@ public class DatabaseBeachsideMenu {
         menu[1][6][2].add(new Food("Mac-&-Cheese", "Vegetarian/Vegan (Entrée)"));
         menu[1][6][2].add(new Food("BBQ Pulled Pork Sandwich\n", "Grill"));
         menu[1][6][2].add(new Food("Veggie", "Pizza Station (Entrée)"));
-
-        //Test
-        menu[1][6][2].add(new Food("test", "test2"));
     }
 
 

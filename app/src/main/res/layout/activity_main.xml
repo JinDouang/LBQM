@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
-                android:text="Lunch" />
+                android:text="@string/lunch" />
 
             <Button
                 android:id="@+id/dateViewButton"
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
-                android:text="February 13th 12:44" />
+                android:text="@string/february_13th_12_44" />
         </LinearLayout>
     </FrameLayout>
 
@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="48dp"
-        android:hint="search"
+        android:hint="@string/search"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -57,7 +57,7 @@
         android:layout_marginTop="12dp"
         android:background="#B3E5FC"
         android:padding="45dp"
-        android:text="Beachside Menu"
+        android:text="@string/beachside_menu"
         android:textSize="20sp"
         android:textStyle="bold|italic" />
 
@@ -70,7 +70,7 @@
         android:layout_below="@+id/BeachsideMenu"
         android:background="#B2DFDB"
         android:padding="45dp"
-        android:text="Hillside menu"
+        android:text="@string/hillside_menu"
         android:textSize="20sp"
         android:textStyle="bold|italic" />
 
@@ -83,7 +83,7 @@
         android:layout_below="@+id/HillsideMenu"
         android:background="#FFCCBC"
         android:padding="45dp"
-        android:text="Parkside Menu"
+        android:text="@string/parkside_menu"
         android:textSize="20sp"
         android:textStyle="bold|italic" />
 
@@ -110,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
-                android:text="Campus" />
+                android:text="@string/campus" />
 
             <Button
                 android:id="@+id/CalendarViewButton"
@@ -118,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
-                android:text="Calendar" />
+                android:text="@string/calendar" />
         </LinearLayout>
     </FrameLayout>
 

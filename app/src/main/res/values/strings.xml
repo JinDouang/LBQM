@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Long Beach Quick Menu</string>
+    <string name="calendar">Calendar</string>
+    <string name="campus">Campus</string>
+    <string name="parkside_menu">Parkside Menu</string>
+    <string name="hillside_menu">Hillside menu</string>
+    <string name="beachside_menu">Beachside Menu</string>
+    <string name="search">search</string>
+    <string name="february_13th_12_44">February 13th 12:44</string>
+    <string name="lunch">Lunch</string>
 </resources>

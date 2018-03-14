@@ -1,12 +1,17 @@
 package com.lbqm.longbeachquickmenu;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -44,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         /*
         Access Calendar
         */
-        setCalendar();
+        new Calendar(MainActivity.this).setCalendar();
 
         /*
         * set button spinner to switch category
@@ -105,15 +110,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(ParkSide);
                 break;
         }
-    }
-
-    public void setCalendar() {
-        Button Calendar = findViewById(R.id.CalendarViewButton);
-        Calendar.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CalendarActivity.class));
-            }
-        });
-
     }
 }

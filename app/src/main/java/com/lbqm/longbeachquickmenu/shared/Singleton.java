@@ -10,6 +10,8 @@ public class Singleton {
 
     public static String customVar = "Hello";
 
+    /* TODO Use variale 'categories[]' in this class and make it use for MainActivity and other menu */
+
 
     /* Return the instance, can use getInstance and call another method
     * e.g Singleton.getInstance().method

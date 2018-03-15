@@ -26,6 +26,8 @@ public class Calendar {
         this.context = context;
     }
 
+    /* TODO Make dateview with the Text working for MainActivity and other menu view  */
+
     public void setCalendar() {
 
         /* variable set with the id "dateViewButton" */

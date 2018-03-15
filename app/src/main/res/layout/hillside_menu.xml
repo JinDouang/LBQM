@@ -54,4 +54,29 @@
         android:background="@drawable/button_bg"
         android:text="@string/calendar" />
 
+    <TextView
+        android:id="@+id/textViewTest2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="151dp"
+        android:text="@string/test"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/spinner"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="24dp"
+        android:textSize="20sp"
+        android:text="HillSide" />
+
+
+
 </RelativeLayout>

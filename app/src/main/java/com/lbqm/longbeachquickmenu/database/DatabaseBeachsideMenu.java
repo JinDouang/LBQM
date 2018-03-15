@@ -10,6 +10,24 @@ public class DatabaseBeachsideMenu {
         return menu[cycle][day][time];
     }
 
+    public int getCycleLength() {
+        int myLength = 0;
+        myLength = menu.length;
+        return myLength;
+    }
+
+    public int getDayLength(int cycle) {
+        int myLength = 0;
+        myLength = menu[cycle].length;
+        return myLength;
+    }
+
+    public int getTimeLength(int cycle, int day) {
+        int myLength = 0;
+        myLength = menu[cycle][day].length;
+        return myLength;
+    }
+
     public DatabaseBeachsideMenu() {
 
         //Loop through 3d database and initialize every ArrayList to prevent "generic array creation" crash

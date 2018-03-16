@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.lbqm.longbeachquickmenu.database.DatabaseBeachsideMenu;
 import com.lbqm.longbeachquickmenu.database.Food;
+import com.lbqm.longbeachquickmenu.shared.SpinnerService;
 
 import java.util.ArrayList;
 
@@ -15,9 +16,27 @@ import java.util.ArrayList;
  */
 
 public class HillsideMenu extends AppCompatActivity {
-
     //String[] test = {"MOT!", "MOT2", "MOT3"};
     //test.getMenu(0,0,0).get(0).getName()
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.hillside_menu);
+
+        /* set button spinner to switch category */
+        new SpinnerService(HillsideMenu.this).setSpinner();
+
+
+        DatabaseBeachsideMenu test = new DatabaseBeachsideMenu();
+
+
+        TextView newtext = (TextView) findViewById(R.id.textViewTest2);
+        System.out.println();
+        newtext.setText(test.getMenu(0,0,0).get(0).getName());
+
+    }
 
     public String fullMeal(int cycle, int date, int time) {
 
@@ -33,19 +52,5 @@ public class HillsideMenu extends AppCompatActivity {
 
 
         return meal;
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        DatabaseBeachsideMenu test = new DatabaseBeachsideMenu();
-
-
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.hillside_menu);
-        TextView newtext = (TextView) findViewById(R.id.textViewTest2);
-        System.out.println();
-        newtext.setText(test.getMenu(0,0,0).get(0).getName());
-
     }
 }

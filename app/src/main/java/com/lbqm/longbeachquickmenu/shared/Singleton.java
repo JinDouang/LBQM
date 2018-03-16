@@ -10,12 +10,19 @@ public class Singleton {
 
     public static String customVar = "Hello";
 
-    /* TODO Use variale 'categories[]' in this class and make it use for MainActivity and other menu */
+    /* List of categories */
+    public static String categories[] = {"Breakfast", "Lunch", "Dinner"};
+    /* category chosen */
+    public static String categoryFiltered;
+    /* category position variable to keep the view updated using this variable */
+    public static int position;
+
+
 
 
     /* Return the instance, can use getInstance and call another method
-    * e.g Singleton.getInstance().method
-    * */
+     e.g Singleton.getInstance().method
+     */
     public static Singleton getInstance() {
         return ourInstance;
     }

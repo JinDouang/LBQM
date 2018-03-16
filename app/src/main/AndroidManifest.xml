@@ -21,6 +21,7 @@
         <activity android:name=".HillsideMenu" />
         <activity android:name=".ParksideMenu" />
         <activity android:name=".Calendar" />
+        <activity android:name=".shared.SpinnerService" />
     </application>
 
 </manifest>

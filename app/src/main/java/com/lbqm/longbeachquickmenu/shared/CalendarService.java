@@ -1,4 +1,4 @@
-package com.lbqm.longbeachquickmenu;
+package com.lbqm.longbeachquickmenu.shared;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -10,11 +10,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 
+import com.lbqm.longbeachquickmenu.R;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by jin on 25/02/2018.
  */
 
-public class Calendar {
+public class CalendarService {
 
     private Button dateview;
 
@@ -22,7 +28,7 @@ public class Calendar {
 
     private Context context;
 
-    public Calendar(Context context) {
+    public CalendarService(Context context) {
         this.context = context;
     }
 
@@ -75,13 +81,22 @@ public class Calendar {
         mDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month + 1;
-                Log.d("[DEBUG]", "onDateSet: mm/dd/yyy: " + month + "/" + day + "/" + year);
 
-                String date = month + "/" + day + "/" + year;
+
+                Date d = new Date(year, month, day);
+                SimpleDateFormat dateFormatter = new SimpleDateFormat("MMMM dd EEEE ");
+                String strDate = dateFormatter.format(d);
+
+                System.out.println("[DEBUG] Formatted date is " + strDate);
+
+
+                // String date = month + "/" + day + "/" + year;
+
 
                 // change variable into service variable?
-                dateview.setText(date);
+                dateview.setText(strDate + " " + year);
+
+
             }
         };
 

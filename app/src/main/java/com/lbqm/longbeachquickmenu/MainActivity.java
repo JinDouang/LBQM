@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.lbqm.longbeachquickmenu.shared.CalendarService;
 import com.lbqm.longbeachquickmenu.shared.SpinnerService;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -26,8 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Park.setOnClickListener(this);
 
 
-        /* Access Calendar */
-        new Calendar(MainActivity.this).setCalendar();
+        /* Access CalendarService */
+        new CalendarService(MainActivity.this).setCalendar();
 
         /* set button spinner to switch category */
         new SpinnerService(MainActivity.this).setSpinner();

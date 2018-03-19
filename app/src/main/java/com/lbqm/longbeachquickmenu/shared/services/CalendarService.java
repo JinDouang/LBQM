@@ -10,9 +10,10 @@ import android.widget.Button;
 import android.widget.DatePicker;
 
 import com.lbqm.longbeachquickmenu.R;
-import com.lbqm.longbeachquickmenu.shared.SingletonCalendar;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by jin on 25/02/2018.
@@ -26,6 +27,9 @@ public class CalendarService {
 
     private Context context;
 
+    /* Date variable that will be used to display view */
+    public static String Date =  new SimpleDateFormat("MMMM dd, yyyy").format(new Date());
+
     public CalendarService(Context context) {
         this.context = context;
     }
@@ -36,7 +40,7 @@ public class CalendarService {
         /* variable set with the id "dateViewButton" */
         dateview = ((Activity)context).findViewById(R.id.dateViewButton);
 
-        dateview.setText(SingletonCalendar.Date);
+        dateview.setText(Date);
 
         Button dateView = ((Activity) context).findViewById(R.id.dateViewButton);
         Button calendarView = ((Activity) context).findViewById(R.id.CalendarViewButton);
@@ -85,10 +89,10 @@ public class CalendarService {
                 calendar.set(Calendar.MONTH, month);
                 calendar.set(Calendar.DAY_OF_MONTH, day);
 
-                SingletonCalendar.Date = new SimpleDateFormat("MMMM dd, yyyy").format(calendar.getTime());
+                Date = new SimpleDateFormat("MMMM dd, yyyy").format(calendar.getTime());
 
                 // change variable into service variable?
-                dateview.setText(SingletonCalendar.Date);
+                dateview.setText(Date);
 
 
             }

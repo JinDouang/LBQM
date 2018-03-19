@@ -8,19 +8,8 @@ import java.util.Date;
  */
 
 public class SingletonCalendar {
-    private static final SingletonCalendar ourInstance = new SingletonCalendar();
-
     public static String Date =  new SimpleDateFormat("MMMM dd, yyyy").format(new Date());
 
-    /* Return the instance, can use getInstance and call another method
-     e.g Singleton.getInstance().method
-     */
-    public static SingletonCalendar getInstance() {
-        return ourInstance;
+    public SingletonCalendar() {
     }
-
-    private SingletonCalendar() {
-    }
-
-    public void method() {}
 }

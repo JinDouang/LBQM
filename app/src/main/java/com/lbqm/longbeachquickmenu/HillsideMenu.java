@@ -1,7 +1,10 @@
 package com.lbqm.longbeachquickmenu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.lbqm.longbeachquickmenu.database.DatabaseBeachsideMenu;
@@ -26,6 +29,15 @@ public class HillsideMenu extends AppCompatActivity {
         new CalendarService(HillsideMenu.this).setCalendar();
         /* set button spinner to switch category */
         new SpinnerService(HillsideMenu.this).setSpinner();
+        /* Access Campus */
+        Button Campus = (HillsideMenu.this).findViewById(R.id.CampusViewButton);
+
+        Campus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), CampusActivity.class));
+            }
+        });
 
 
         DatabaseBeachsideMenu test = new DatabaseBeachsideMenu();

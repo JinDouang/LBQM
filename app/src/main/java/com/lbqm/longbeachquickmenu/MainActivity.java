@@ -1,13 +1,11 @@
 package com.lbqm.longbeachquickmenu;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.lbqm.longbeachquickmenu.shared.Singleton;
 import com.lbqm.longbeachquickmenu.shared.services.CalendarService;
 import com.lbqm.longbeachquickmenu.shared.services.SpinnerService;
 
@@ -30,14 +28,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         /* Access Campus */
         Button Campus = (MainActivity.this).findViewById(R.id.CampusViewButton);
-
         Campus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(v.getContext(), MapsActivity.class));
             }
         });
-
 
         /* Access CalendarService */
         new CalendarService(MainActivity.this).setCalendar();

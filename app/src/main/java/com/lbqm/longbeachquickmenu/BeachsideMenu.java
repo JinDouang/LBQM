@@ -26,11 +26,18 @@ public class BeachsideMenu extends AppCompatActivity {
         new SpinnerService(BeachsideMenu.this).setSpinner();
         /* Access Campus */
         Button Campus = (BeachsideMenu.this).findViewById(R.id.CampusViewButton);
-
         Campus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(v.getContext(), MapsActivity.class));
+            }
+        });
+        /* Access Menu */
+        Button Menu = (BeachsideMenu.this).findViewById(R.id.menu);
+        Menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), MainActivity.class));
             }
         });
 

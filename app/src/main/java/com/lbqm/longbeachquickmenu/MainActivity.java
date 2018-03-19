@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.lbqm.longbeachquickmenu.shared.CalendarService;
-import com.lbqm.longbeachquickmenu.shared.SpinnerService;
+import com.lbqm.longbeachquickmenu.shared.services.CalendarService;
+import com.lbqm.longbeachquickmenu.shared.services.SpinnerService;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onResume() {
         super.onResume();
-
+        new CalendarService(MainActivity.this).setCalendar();
         new SpinnerService(MainActivity.this).setSpinner();
     }
 

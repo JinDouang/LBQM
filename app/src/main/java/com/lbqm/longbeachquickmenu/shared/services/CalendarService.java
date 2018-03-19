@@ -1,20 +1,18 @@
-package com.lbqm.longbeachquickmenu.shared;
+package com.lbqm.longbeachquickmenu.shared.services;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 
 import com.lbqm.longbeachquickmenu.R;
-
-import java.text.DateFormat;
+import com.lbqm.longbeachquickmenu.shared.SingletonCalendar;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  * Created by jin on 25/02/2018.
@@ -35,9 +33,10 @@ public class CalendarService {
     /* TODO Make dateview with the Text working for MainActivity and other menu view  */
 
     public void setCalendar() {
-
         /* variable set with the id "dateViewButton" */
         dateview = ((Activity)context).findViewById(R.id.dateViewButton);
+
+        dateview.setText(SingletonCalendar.Date);
 
         Button dateView = ((Activity) context).findViewById(R.id.dateViewButton);
         Button calendarView = ((Activity) context).findViewById(R.id.CalendarViewButton);
@@ -81,20 +80,15 @@ public class CalendarService {
         mDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, month);
+                calendar.set(Calendar.DAY_OF_MONTH, day);
 
-
-                Date d = new Date(year, month, day);
-                SimpleDateFormat dateFormatter = new SimpleDateFormat("MMMM dd EEEE ");
-                String strDate = dateFormatter.format(d);
-
-                System.out.println("[DEBUG] Formatted date is " + strDate);
-
-
-                // String date = month + "/" + day + "/" + year;
-
+                SingletonCalendar.Date = new SimpleDateFormat("MMMM dd, yyyy").format(calendar.getTime());
 
                 // change variable into service variable?
-                dateview.setText(strDate + " " + year);
+                dateview.setText(SingletonCalendar.Date);
 
 
             }

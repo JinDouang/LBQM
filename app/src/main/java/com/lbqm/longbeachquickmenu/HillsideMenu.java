@@ -2,14 +2,11 @@ package com.lbqm.longbeachquickmenu;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.lbqm.longbeachquickmenu.database.DatabaseBeachsideMenu;
-import com.lbqm.longbeachquickmenu.database.Food;
-import com.lbqm.longbeachquickmenu.shared.SpinnerService;
-
-import java.util.ArrayList;
+import com.lbqm.longbeachquickmenu.shared.services.CalendarService;
+import com.lbqm.longbeachquickmenu.shared.services.SpinnerService;
 
 /**
  * Created by jin on 25/02/2018.
@@ -25,6 +22,8 @@ public class HillsideMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hillside_menu);
 
+        /* Access CalendarService */
+        new CalendarService(HillsideMenu.this).setCalendar();
         /* set button spinner to switch category */
         new SpinnerService(HillsideMenu.this).setSpinner();
 

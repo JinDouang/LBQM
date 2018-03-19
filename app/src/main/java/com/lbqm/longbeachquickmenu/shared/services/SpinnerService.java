@@ -1,4 +1,4 @@
-package com.lbqm.longbeachquickmenu.shared;
+package com.lbqm.longbeachquickmenu.shared.services;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.lbqm.longbeachquickmenu.R;
+import com.lbqm.longbeachquickmenu.shared.Singleton;
 
 /**
  * Created by jin on 15/03/2018.
@@ -43,11 +44,8 @@ public class SpinnerService extends AppCompatActivity  {
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                System.out.println("[DEBUG] [CategoryBefore:] " + Singleton.categoryFiltered);
                 Singleton.categoryFiltered = parent.getItemAtPosition(position).toString();
                 Singleton.position = position;
-
-                System.out.println("[DEBUG] [CategoryAfter:] " + Singleton.categoryFiltered);
             }
 
             @Override

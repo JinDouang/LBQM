@@ -8,16 +8,12 @@ package com.lbqm.longbeachquickmenu.shared;
 public class Singleton {
     private static final Singleton ourInstance = new Singleton();
 
-    public static String customVar = "Hello";
-
     /* List of categories */
     public static String categories[] = {"Breakfast", "Lunch", "Dinner"};
     /* category chosen */
     public static String categoryFiltered;
     /* category position variable to keep the view updated using this variable */
     public static int position;
-
-
 
 
     /* Return the instance, can use getInstance and call another method

@@ -7,10 +7,10 @@
     <string name="hillside_menu">Hillside menu</string>
     <string name="beachside_menu">Beachside Menu</string>
     <string name="search">search</string>
-    <string name="february_13th_12_44">February 13th 12:44</string>
     <string name="lunch">Lunch</string>
     <string name="Beachside">Beachside</string>
     <string name="Parkside">Parkside</string>
     <string name="Hillside">Hillside</string>
     <string name="test">Test</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

@@ -35,7 +35,7 @@ public class HillsideMenu extends AppCompatActivity {
         Campus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), CampusActivity.class));
+                startActivity(new Intent(v.getContext(), MapsActivity.class));
             }
         });
 

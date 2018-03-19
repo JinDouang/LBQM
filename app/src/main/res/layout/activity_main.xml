@@ -27,8 +27,7 @@
         android:layout_alignLeft="@+id/CalendarViewButton"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/CalendarViewButton"
-        android:background="@drawable/button_bg"
-        android:text="@string/february_13th_12_44" />
+        android:background="@drawable/button_bg" />
 
 
     <Button

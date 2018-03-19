@@ -33,7 +33,7 @@ public class CampusActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.beachside:
-                Intent BeachSide = new Intent(CampusActivity.this, BeachsideMenu.class);
+                Intent BeachSide = new Intent(CampusActivity.this, MapsActivity.class);
                 startActivity(BeachSide);
                 break;
             case R.id.hillside:

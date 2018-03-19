@@ -16,7 +16,8 @@
         app:layout_constraintBottom_toTopOf="@+id/parkside"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/hillside"
-        app:srcCompat="@drawable/beachside" />
+        app:srcCompat="@drawable/beachside"
+        android:layout_marginRight="69dp" />
 
     <ImageView
         android:id="@+id/hillside"
@@ -30,7 +31,8 @@
         app:layout_constraintEnd_toStartOf="@+id/beachside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hillside" />
+        app:srcCompat="@drawable/hillside"
+        android:layout_marginRight="41dp" />
 
     <ImageView
         android:id="@+id/parkside"
@@ -45,5 +47,7 @@
         app:layout_constraintHorizontal_bias="0.63"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hillside"
-        app:srcCompat="@drawable/parkside" />
+        app:srcCompat="@drawable/parkside"
+        android:layout_marginRight="17dp"
+        android:layout_marginLeft="56dp" />
 </android.support.constraint.ConstraintLayout>

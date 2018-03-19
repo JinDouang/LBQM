@@ -5,9 +5,8 @@
     android:layout_height="match_parent"
     tools:context="com.lbqm.longbeachquickmenu.MainActivity"
     android:orientation="vertical">
-
-    <Button
-        android:id="@+id/TypePeriodViewButton"
+    <Spinner
+        android:id="@+id/spinner"
         android:layout_width="189dp"
         android:layout_height="match_parent"
         android:layout_alignBottom="@+id/dateViewButton"
@@ -17,16 +16,15 @@
         android:paddingBottom="2dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:paddingTop="2dp"
-        android:text="@string/Parkside"/>
+        android:paddingTop="2dp" />
 
     <Button
         android:id="@+id/dateViewButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/CalendarViewButton"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/CalendarViewButton"
+        android:layout_toEndOf="@+id/spinner"
+        android:layout_toRightOf="@+id/spinner"
         android:background="@drawable/button_bg"
         android:text="@string/february_13th_12_44" />
 
@@ -50,8 +48,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/TypePeriodViewButton"
-        android:layout_toRightOf="@+id/TypePeriodViewButton"
+        android:layout_toEndOf="@+id/spinner"
+        android:layout_toRightOf="@+id/spinner"
         android:background="@drawable/button_bg"
         android:text="@string/calendar" />
 

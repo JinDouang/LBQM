@@ -10,6 +10,24 @@ public class DatabaseBeachsideMenu {
         return menu[cycle][day][time];
     }
 
+    public int getCycleLength() {
+        int myLength = 0;
+        myLength = menu.length;
+        return myLength;
+    }
+
+    public int getDayLength(int cycle) {
+        int myLength = 0;
+        myLength = menu[cycle].length;
+        return myLength;
+    }
+
+    public int getTimeLength(int cycle, int day) {
+        int myLength = 0;
+        myLength = menu[cycle][day].length;
+        return myLength;
+    }
+
     public DatabaseBeachsideMenu() {
 
         //Loop through 3d database and initialize every ArrayList to prevent "generic array creation" crash
@@ -385,6 +403,545 @@ public class DatabaseBeachsideMenu {
         menu[1][6][2].add(new Food("Mac-&-Cheese", "Vegetarian/Vegan (Entrée)"));
         menu[1][6][2].add(new Food("BBQ Pulled Pork Sandwich\n", "Grill"));
         menu[1][6][2].add(new Food("Veggie", "Pizza Station (Entrée)"));
+
+        //Cycle 3
+        //Monday
+        //Breakfast
+        menu[2][0][0].add(new Food("Cream of Rice", "Breakfast Bar"));
+        menu[2][0][0].add(new Food("Texas French Toast", "Breakfast Bar"));
+        menu[2][0][0].add(new Food("Grilled Ham", "Breakfast Bar"));
+        menu[2][0][0].add(new Food("Cottage Fries", "Breakfast Bar"));
+
+        //Lunch
+        menu[2][0][1].add(new Food("Chicken Tortilla", "Soups 1"));
+        menu[2][0][1].add(new Food("Cream of Broccoli", "Soups 2"));
+        menu[2][0][1].add(new Food("Grilled Vegetable Wrap", "The Bar (Entrée)"));
+        menu[2][0][1].add(new Food("Teriyaki Chicken", "At Home (Entrée)"));
+        menu[2][0][1].add(new Food("Vegetable Yakisoba Bowl", "Vegetarian/Vegan (Entrée)"));
+        menu[2][0][1].add(new Food("BLT", "Grill"));
+        menu[2][0][1].add(new Food("Combo", "Pizza Station (Entrée)"));
+        menu[2][0][1].add(new Food("M&M Bar ", "Sweets"));
+
+        //Dinner
+        menu[2][0][2].add(new Food("Chicken Tortilla", "Soups 1"));
+        menu[2][0][2].add(new Food("Cream of Broccoli", "Soups 2"));
+        menu[2][0][2].add(new Food("South West Caesar Salad", "The Bar (Entrée)"));
+        menu[2][0][2].add(new Food("Meat/Vegetable Lasagna", "At Home (Entrée)"));
+        menu[2][0][2].add(new Food("Cauliflower & Potato Stew ", "Vegetarian/Vegan (Entrée)"));
+        menu[2][0][2].add(new Food("Turkey Burger", "Grill"));
+        menu[2][0][2].add(new Food("Combo", "Pizza Station (Entrée)"));
+        menu[2][0][2].add(new Food("M&M Bar ", "Sweets"));
+
+        //Tuesday
+        //Breakfast
+        menu[2][1][0].add(new Food("Grits", "Breakfast Bar"));
+        menu[2][1][0].add(new Food("Biscuit Sandwich", "Breakfast Bar"));
+        menu[2][1][0].add(new Food("Bacon", "Breakfast Bar"));
+        menu[2][1][0].add(new Food("Hash Brown", "Breakfast Bar"));
+
+        //Lunch
+        menu[2][1][1].add(new Food("Potato & Bacon", "Soups 1"));
+        menu[2][1][1].add(new Food("Miso Soup", "Soups 2"));
+        menu[2][1][1].add(new Food("Crispy Chicken Bacon Wrap", "The Bar (Entrée)"));
+        menu[2][1][1].add(new Food("Korean Bowl", "At Home (Entrée)"));
+        menu[2][1][1].add(new Food("Spinach & Cheese Tortellini", "Vegetarian/Vegan (Entrée)"));
+        menu[2][1][1].add(new Food("Reuben Sandwich", "Grill"));
+        menu[2][1][1].add(new Food("Pastrami", "Pizza Station (Entrée)"));
+        menu[2][1][1].add(new Food("Boston Cream Pie ", "Sweets"));
+
+        //Dinner
+        menu[2][1][2].add(new Food("Potato & Bacon", "Soups 1"));
+        menu[2][1][2].add(new Food("Miso Soup", "Soups 2"));
+        menu[2][1][2].add(new Food("Apple Walnut Salad ", "The Bar (Entrée)"));
+        menu[2][1][2].add(new Food("Shepherd’s Pie", "At Home (Entrée)"));
+        menu[2][1][2].add(new Food("Mushroom Stroganoff", "Vegetarian/Vegan (Entrée)"));
+        menu[2][1][2].add(new Food("Grilled Ham & Cheese", "Grill"));
+        menu[2][1][2].add(new Food("Pastrami", "Pizza Station (Entrée)"));
+        menu[2][1][2].add(new Food("Boston Cream Pie ", "Sweets"));
+
+        //Wednesday
+        //Breakfast
+        menu[2][2][0].add(new Food("Sweet Rice w/ Milk", "Breakfast Bar"));
+        menu[2][2][0].add(new Food("Chocolate Pancakes", "Breakfast Bar"));
+        menu[2][2][0].add(new Food("Corned Beef Hash", "Breakfast Bar"));
+        menu[2][2][0].add(new Food("Country Potatoes", "Breakfast Bar"));
+
+        //Lunch
+        menu[2][2][1].add(new Food("Albondigas", "Soups 1"));
+        menu[2][2][1].add(new Food("Italian Ravioli", "Soups 2"));
+        menu[2][2][1].add(new Food("Beef Taco Salad", "The Bar (Entrée)"));
+        menu[2][2][1].add(new Food("Chicken and Biscuits", "At Home (Entrée)"));
+        menu[2][2][1].add(new Food("Beef Gardein Stir Fry", "Vegetarian/Vegan (Entrée)"));
+        menu[2][2][1].add(new Food("Tortas", "Grill"));
+        menu[2][2][1].add(new Food("Buffalo Chicken", "Pizza Station (Entrée)"));
+        menu[2][2][1].add(new Food("Brownies", "Sweets"));
+
+        //Dinner
+        menu[2][2][2].add(new Food("Albondigas", "Soups 1"));
+        menu[2][2][2].add(new Food("Italian Ravioli", "Soups 2"));
+        menu[2][2][2].add(new Food("Chinese Chicken Salad", "The Bar (Entrée)"));
+        menu[2][2][2].add(new Food("Mediterranean Chicken", "At Home (Entrée)"));
+        menu[2][2][2].add(new Food("Gardein Beef", "Vegetarian/Vegan (Entrée)"));
+        menu[2][2][2].add(new Food("Pesto Turkey Flat Bread", "Grill"));
+        menu[2][2][2].add(new Food("Buffalo Chicken", "Pizza Station (Entrée)"));
+        menu[2][2][2].add(new Food("Carrot Cake", "Sweets"));
+
+        //Thursday
+        //Breakfast
+        menu[2][3][0].add(new Food("Cream of Wheat", "Breakfast Bar"));
+        menu[2][3][0].add(new Food("Biscuits & Gravy", "Breakfast Bar"));
+        menu[2][3][0].add(new Food("Kielbasa ", "Breakfast Bar"));
+        menu[2][3][0].add(new Food("Tater Tots", "Breakfast Bar"));
+
+        //Lunch
+        menu[2][3][1].add(new Food("Pozole", "Soups 1"));
+        menu[2][3][1].add(new Food("Potato Chowder", "Soups 2"));
+        menu[2][3][1].add(new Food("BBQ Chicken Wrap", "The Bar (Entrée)"));
+        menu[2][3][1].add(new Food("Asian Shrimp Pasta", "At Home (Entrée)"));
+        menu[2][3][1].add(new Food("Moroccan Lentil", "Vegetarian/Vegan (Entrée)"));
+        menu[2][3][1].add(new Food("Turkey Club Sandwich", "Grill"));
+        menu[2][3][1].add(new Food("Italian Sausage", "Pizza Station (Entrée)"));
+        menu[2][3][1].add(new Food("Pumpkin Pie", "Sweets"));
+
+        //Dinner
+        menu[2][3][2].add(new Food("Pozole", "Soups 1"));
+        menu[2][3][2].add(new Food("Potato Chowder ", "Soups 2"));
+        menu[2][3][2].add(new Food("Assorted Humas w/ Pita Chips", "The Bar (Entrée)"));
+        menu[2][3][2].add(new Food("Spicy BBQ Chicken", "At Home (Entrée)"));
+        menu[2][3][2].add(new Food("Pasta Jambalaya", "Vegetarian/Vegan (Entrée)"));
+        menu[2][3][2].add(new Food("Burrito Al Pastor", "Grill"));
+        menu[2][3][2].add(new Food("Italian Sausage", "Pizza Station (Entrée)"));
+        menu[2][3][2].add(new Food("Pumpkin Pie", "Sweets"));
+
+        //Friday
+        //Breakfast
+        menu[2][4][0].add(new Food("Cinnamon Rice", "Breakfast Bar"));
+        menu[2][4][0].add(new Food("Breakfast Burrito", "Breakfast Bar"));
+        menu[2][4][0].add(new Food("Lil Smokies", "Breakfast Bar"));
+        menu[2][4][0].add(new Food("Potatoes O’ Brien", "Breakfast Bar"));
+
+        //Lunch
+        menu[2][4][1].add(new Food("Clam Chowder", "Soups 1"));
+        menu[2][4][1].add(new Food("Minestrone", "Soups 2"));
+        menu[2][4][1].add(new Food("Chicken Caesar", "The Bar (Entrée)"));
+        menu[2][4][1].add(new Food("Seafood Platter", "At Home (Entrée)"));
+        menu[2][4][1].add(new Food("Roasted Cauliflower Bowl", "Vegetarian/Vegan (Entrée)"));
+        menu[2][4][1].add(new Food("Taquitos", "Grill"));
+        menu[2][4][1].add(new Food("Hawaiian", "Pizza Station (Entrée)"));
+        menu[2][4][1].add(new Food("Pound Cake", "Sweets"));
+
+        //Dinner
+        menu[2][4][2].add(new Food("Clam Chowder", "Soups 1"));
+        menu[2][4][2].add(new Food("Minestrone", "Soups 2"));
+        menu[2][4][2].add(new Food("Greek Salad", "The Bar (Entrée)"));
+        menu[2][4][2].add(new Food("Chicken Fried Steak (Beef)", "At Home (Entrée)"));
+        menu[2][4][2].add(new Food("Curry Garbanzo Vegetable Stew", "Vegetarian/Vegan (Entrée)"));
+        menu[2][4][2].add(new Food("Hawaiian BBQ Pull Pork Sandwich", "Grill"));
+        menu[2][4][2].add(new Food("Hawaiian", "Pizza Station (Entrée)"));
+        menu[2][4][2].add(new Food("Pound Cake", "Sweets"));
+
+        //Saturday
+        //Breakfast
+        menu[2][5][0].add(new Food("Cream of Wheat", "Breakfast Bar"));
+        menu[2][5][0].add(new Food("Waffle Bar", "Breakfast Bar"));
+        menu[2][5][0].add(new Food("Sausage Links ", "Breakfast Bar"));
+        menu[2][5][0].add(new Food("Hash Brown Patty", "Breakfast Bar"));
+
+        //Lunch
+        menu[2][5][1].add(new Food("Vegetable Beef", "Soups 1"));
+        menu[2][5][1].add(new Food("Corn Chowder", "Soups 2"));
+        menu[2][5][1].add(new Food("Roasted Pork Loin", "At Home (Entrée)"));
+        menu[2][5][1].add(new Food("Tortellini Florentine", "Vegetarian/Vegan (Entrée)"));
+
+        //Dinner
+        menu[2][5][2].add(new Food("Vegetable Beef", "Soups 1"));
+        menu[2][5][2].add(new Food("Corn Chowder", "Soups 2"));
+        menu[2][5][2].add(new Food("Chopped Salad", "The Bar (Entrée)"));
+        menu[2][5][2].add(new Food("Chicken Bacon Alfredo Pasta", "At Home (Entrée)"));
+        menu[2][5][2].add(new Food("Vegetable Pad Thai", "Vegetarian/Vegan (Entrée)"));
+        menu[2][5][2].add(new Food("Philly Steak", "Grill"));
+        menu[2][5][2].add(new Food("Combo", "Pizza Station (Entrée)"));
+
+        //Sunday
+        //Breakfast
+        menu[2][6][0].add(new Food("Cream of Rice", "Breakfast Bar"));
+        menu[2][6][0].add(new Food("Cinnamon Rolls ", "Breakfast Bar"));
+        menu[2][6][0].add(new Food("Sausage Patty", "Breakfast Bar"));
+        menu[2][6][0].add(new Food("Hash Brown", "Breakfast Bar"));
+
+        //Lunch
+        menu[2][6][1].add(new Food("Chicken Gumbo", "Soups 1"));
+        menu[2][6][1].add(new Food("Vegetable", "Soups 2"));
+        menu[2][6][1].add(new Food("Chicken Tamale", "At Home (Entrée)"));
+        menu[2][6][1].add(new Food("Cheese Tamale", "Vegetarian/Vegan (Entrée)"));
+
+        //Dinner
+        menu[2][6][2].add(new Food("Chicken Gumbo", "Soups 1"));
+        menu[2][6][2].add(new Food("Vegetable", "Soups 2"));
+        menu[2][6][2].add(new Food("Baked Potato", "The Bar (Entrée)"));
+        menu[2][6][2].add(new Food("Beef Ravioli", "At Home (Entrée)"));
+        menu[2][6][2].add(new Food("Cheese Raviolli", "Vegetarian/Vegan (Entrée)"));
+        menu[2][6][2].add(new Food("Spicy Ranch Chicken Sandwich", "Grill"));
+        menu[2][6][2].add(new Food("Sausage & Pepper", "Pizza Station (Entrée)"));
+
+        //Cycle 4
+        //Monday
+        //Breakfast
+        menu[3][0][0].add(new Food("Cream of Rice", "Breakfast Bar"));
+        menu[3][0][0].add(new Food("French Toast", "Breakfast Bar"));
+        menu[3][0][0].add(new Food("Kielbasa Sausage", "Breakfast Bar"));
+        menu[3][0][0].add(new Food("Country Potatoes", "Breakfast Bar"));
+
+        //Lunnh
+        menu[3][0][1].add(new Food("Beef Noodle", "Soups 1"));
+        menu[3][0][1].add(new Food("Butternut Squash Soup", "Soups 2"));
+        menu[3][0][1].add(new Food("Italian Pasta Salad", "The Bar (Entrée)"));
+        menu[3][0][1].add(new Food("Lemon Chicken", "At Home (Entrée)"));
+        menu[3][0][1].add(new Food("Veggie Noodles", "Vegetarian/Vegan (Entrée)"));
+        menu[3][0][1].add(new Food("Grilled Californian Turkey Club", "Grill"));
+        menu[3][0][1].add(new Food("Mexican Chorizo", "Pizza Station (Entrée)"));
+        menu[3][0][1].add(new Food("Chocolate Brownie", "Sweets"));
+
+        //Dinner
+        menu[3][0][2].add(new Food("Beef Noodle", "Soups 1"));
+        menu[3][0][2].add(new Food("Butternut Squash Soup", "Soups 2"));
+        menu[3][0][2].add(new Food("Caprese Salad", "The Bar (Entrée)"));
+        menu[3][0][2].add(new Food("Garlic & Herb Flank Steak", "At Home (Entrée)"));
+        menu[3][0][2].add(new Food("Cheese Tortellini Au Gratin", "Vegetarian/Vegan (Entrée)"));
+        menu[3][0][2].add(new Food("Chicken/Cheese Quesadilla", "Grill"));
+        menu[3][0][2].add(new Food("Mexican Chorizo", "Pizza Station (Entrée)"));
+        menu[3][0][2].add(new Food("Chocolate Brownie", "Sweets"));
+
+        //Tuesday
+        //Breakfast
+        menu[3][1][0].add(new Food("Grits", "Breakfast Bar"));
+        menu[3][1][0].add(new Food("Chocolate Chip Pancakes", "Breakfast Bar"));
+        menu[3][1][0].add(new Food("Bacon", "Breakfast Bar"));
+        menu[3][1][0].add(new Food("Hash Brown", "Breakfast Bar"));
+
+        //Lunnh
+        menu[3][1][1].add(new Food("Chicken Tortilla", "Soups 1"));
+        menu[3][1][1].add(new Food("Tomato Basil Soup ", "Soups 2"));
+        menu[3][1][1].add(new Food("Ceasar Salad", "The Bar (Entrée)"));
+        menu[3][1][1].add(new Food("Spaghetti & Sausage", "At Home (Entrée)"));
+        menu[3][1][1].add(new Food("Gardein Beef & Chicken Fajita", "Vegetarian/Vegan (Entrée)"));
+        menu[3][1][1].add(new Food("Chicken Tenders", "Grill"));
+        menu[3][1][1].add(new Food("Buffalo Chicken", "Pizza Station (Entrée)"));
+        menu[3][1][1].add(new Food("Zucchini Bread", "Sweets"));
+
+        //Dinner
+        menu[3][1][2].add(new Food("Chicken Tortilla", "Soups 1"));
+        menu[3][1][2].add(new Food("Tomato Basil Soup ", "Soups 2"));
+        menu[3][1][2].add(new Food("Sushi Bar", "The Bar (Entrée)"));
+        menu[3][1][2].add(new Food("Wing & Things", "At Home (Entrée)"));
+        menu[3][1][2].add(new Food("Potato & Cauliflower Curry", "Vegetarian/Vegan (Entrée)"));
+        menu[3][1][2].add(new Food("Hot Dogs", "Grill"));
+        menu[3][1][2].add(new Food("Buffalo Chicken", "Pizza Station (Entrée)"));
+        menu[3][1][2].add(new Food("Rice Krispy", "Sweets"));
+
+        //Wednesday
+        //Breakfast
+        menu[3][2][0].add(new Food("Sweet Rice w/ Milk", "Breakfast Bar"));
+        menu[3][2][0].add(new Food("Huevos Rancheros", "Breakfast Bar"));
+        menu[3][2][0].add(new Food("Carne Asada ", "Breakfast Bar"));
+        menu[3][2][0].add(new Food("Cottage Fries", "Breakfast Bar"));
+
+        //Lunch
+        menu[3][2][1].add(new Food("Italian Wedding", "Soups 1"));
+        menu[3][2][1].add(new Food("Creamy Potato", "Soups 2"));
+        menu[3][2][1].add(new Food("Pho Bar", "The Bar (Entrée)"));
+        menu[3][2][1].add(new Food("5 Spice Thai Pork", "At Home (Entrée)"));
+        menu[3][2][1].add(new Food("Eggplant Parmesan", "Vegetarian/Vegan (Entrée)"));
+        menu[3][2][1].add(new Food("Burrito Station", "Grill"));
+        menu[3][2][1].add(new Food("Sausage Calzon", "Pizza Station (Entrée)"));
+        menu[3][2][1].add(new Food("Coconut Cream Pie", "Sweets"));
+
+        //Dinner
+        menu[3][2][2].add(new Food("Italian Wedding", "Soups 1"));
+        menu[3][2][2].add(new Food("Creamy Potato", "Soups 2"));
+        menu[3][2][2].add(new Food("Cajun Chicken Wrap", "The Bar (Entrée)"));
+        menu[3][2][2].add(new Food("Carne Con Chile Rojo C", "At Home (Entrée)"));
+        menu[3][2][2].add(new Food("Pasta & Vegetable Alfredo", "Vegetarian/Vegan (Entrée)"));
+        menu[3][2][2].add(new Food("Onion Burger", "Grill"));
+        menu[3][2][2].add(new Food("Chicken Empanada", "Pizza Station (Entrée)"));
+        menu[3][2][2].add(new Food("Coconut Cream Pie", "Sweets"));
+
+        //Thursday
+        //Breakfast
+        menu[3][3][0].add(new Food("Cream of Wheat", "Breakfast Bar"));
+        menu[3][3][0].add(new Food("Cinnamon Rolls ", "Breakfast Bar"));
+        menu[3][3][0].add(new Food("Sausage Patty", "Breakfast Bar"));
+        menu[3][3][0].add(new Food("Tater Tots", "Breakfast Bar"));
+
+        //Lunch
+        menu[3][3][1].add(new Food("Caldo De Res", "Soups 1"));
+        menu[3][3][1].add(new Food("Corn Chowder", "Soups 2"));
+        menu[3][3][1].add(new Food("Nacho Bar", "The Bar (Entrée)"));
+        menu[3][3][1].add(new Food("Chicken Teriyaki", "At Home (Entrée)"));
+        menu[3][3][1].add(new Food("Vegetable Quiche", "Vegetarian/Vegan (Entrée)"));
+        menu[3][3][1].add(new Food("Pesto & Pastrami Sandwich", "Grill"));
+        menu[3][3][1].add(new Food("Mac & Cheese Pizza", "Pizza Station (Entrée)"));
+        menu[3][3][1].add(new Food("Pound Cake", "Sweets"));
+
+        //Dinner
+        menu[3][3][2].add(new Food("Caldo De Res", "Soups 1"));
+        menu[3][3][2].add(new Food("Corn Chowder", "Soups 2"));
+        menu[3][3][2].add(new Food("Chicken Fiesta Salad", "The Bar (Entrée)"));
+        menu[3][3][2].add(new Food("Carnitas", "At Home (Entrée)"));
+        menu[3][3][2].add(new Food("Cheese Tamales", "Vegetarian/Vegan (Entrée)"));
+        menu[3][3][2].add(new Food("Char Broiled Chicken ", "Grill"));
+        menu[3][3][2].add(new Food("Mac & Cheese Pizza", "Pizza Station (Entrée)"));
+        menu[3][3][2].add(new Food("Pound Cake", "Sweets"));
+
+        //Friday
+        //Breakfast
+        menu[3][4][0].add(new Food("Cinnamon Rice", "Breakfast Bar"));
+        menu[3][4][0].add(new Food("Benedict Waffle", "Breakfast Bar"));
+        menu[3][4][0].add(new Food("Grilled Ham", "Breakfast Bar"));
+        menu[3][4][0].add(new Food("Potatoes O’Brien", "Breakfast Bar"));
+
+        //Lunch
+        menu[3][4][1].add(new Food("Clam Chowder", "Soups 1"));
+        menu[3][4][1].add(new Food("Vegetable", "Soups 2"));
+        menu[3][4][1].add(new Food("Smoothie Bar", "The Bar (Entrée)"));
+        menu[3][4][1].add(new Food("Cajun Cod Fish", "At Home (Entrée)"));
+        menu[3][4][1].add(new Food("Chile Relleno", "Vegetarian/Vegan (Entrée)"));
+        menu[3][4][1].add(new Food("Sopes", "Grill"));
+        menu[3][4][1].add(new Food("Pesto Chicken", "Pizza Station (Entrée)"));
+        menu[3][4][1].add(new Food("Mocha Cup Cake", "Sweets"));
+
+        //Dinner
+        menu[3][4][2].add(new Food("Clam Chowder", "Soups 1"));
+        menu[3][4][2].add(new Food("Vegetable", "Soups 2"));
+        menu[3][4][2].add(new Food("Sourdough Sausage Bowl", "The Bar (Entrée)"));
+        menu[3][4][2].add(new Food("Beef Stroganoff", "At Home (Entrée)"));
+        menu[3][4][2].add(new Food("Broccoli Feta Rice", "Vegetarian/Vegan (Entrée)"));
+        menu[3][4][2].add(new Food("Fish & Chips", "Grill"));
+        menu[3][4][2].add(new Food("Pesto Chicken", "Pizza Station (Entrée)"));
+        menu[3][4][2].add(new Food("Mocha Cup Cake", "Sweets"));
+
+        //Saturday
+        //Breakfast
+        menu[3][5][0].add(new Food("Cream of Wheat", "Breakfast Bar"));
+        menu[3][5][0].add(new Food("French Toast", "Breakfast Bar"));
+        menu[3][5][0].add(new Food("Turkey Sausage Patty", "Breakfast Bar"));
+        menu[3][5][0].add(new Food("Hash Brown", "Breakfast Bar"));
+
+        //Lunch
+        menu[3][5][1].add(new Food("Chicken Noodle", "Soups 1"));
+        menu[3][5][1].add(new Food("Cream of Broccoli", "Soups 2"));
+        menu[3][5][1].add(new Food("Fried Chicken", "At Home (Entrée)"));
+        menu[3][5][1].add(new Food("Mac & Cheese", "Vegetarian/Vegan (Entrée)"));
+
+        //Dinner
+        menu[3][5][2].add(new Food("Chicken Noodle", "Soups 1"));
+        menu[3][5][2].add(new Food("Cream of Broccoli", "Soups 2"));
+        menu[3][5][2].add(new Food("Baked Potato Bar", "The Bar (Entrée)"));
+        menu[3][5][2].add(new Food("Memphis Ribs", "At Home (Entrée)"));
+        menu[3][5][2].add(new Food("Chickpea Ratatouille", "Vegetarian/Vegan (Entrée)"));
+        menu[3][5][2].add(new Food("Italian Chicken Sandwich", "Grill"));
+        menu[3][5][2].add(new Food("Mac & Cheese", "Pizza Station (Entrée)"));
+
+        //Sunday
+        //Breakfast
+        menu[3][6][0].add(new Food("Cream of Rice", "Breakfast Bar"));
+        menu[3][6][0].add(new Food("Pancake", "Breakfast Bar"));
+        menu[3][6][0].add(new Food("Sausage Link", "Breakfast Bar"));
+        menu[3][6][0].add(new Food("Hash Brown", "Breakfast Bar"));
+
+        //Lunch
+        menu[3][6][1].add(new Food("Beef & Rice Soup", "Soups 1"));
+        menu[3][6][1].add(new Food("French Onion", "Soups 2"));
+        menu[3][6][1].add(new Food("Buffalo Pork Chops", "At Home (Entrée)"));
+        menu[3][6][1].add(new Food("Bionicos", "Vegetarian/Vegan (Entrée)"));
+
+        //Dinner
+        menu[3][6][2].add(new Food("Beef & Rice Soup", "Soups 1"));
+        menu[3][6][2].add(new Food("French Onion", "Soups 2"));
+        menu[3][6][2].add(new Food("Cobb Salad", "The Bar (Entrée)"));
+        menu[3][6][2].add(new Food("Chicken Fajita", "At Home (Entrée)"));
+        menu[3][6][2].add(new Food("Gardein Chicken Fajita", "Vegetarian/Vegan (Entrée)"));
+        menu[3][6][2].add(new Food("Grilled Ham Cheese", "Grill"));
+        menu[3][6][2].add(new Food("Combo", "Pizza Station (Entrée)"));
+
+        //Cycle 5
+        //Monday
+        //Breakfast
+        menu[4][0][0].add(new Food("Cream of Rice", "Breakfast Bar"));
+        menu[4][0][0].add(new Food("Egg & Ham Croissant", "Breakfast Bar"));
+        menu[4][0][0].add(new Food("Kielbasa Sausage", "Breakfast Bar"));
+        menu[4][0][0].add(new Food("Cottage Fries", "Breakfast Bar"));
+
+        //Lunch
+        menu[4][0][1].add(new Food("Split Pea", "Soups 1"));
+        menu[4][0][1].add(new Food("Vegetable", "Soups 2"));
+        menu[4][0][1].add(new Food("Cajun Chicken Wrap", "The Bar (Entrée)"));
+        menu[4][0][1].add(new Food("Fried Chicken", "At Home (Entrée)"));
+        menu[4][0][1].add(new Food("Tofu & Broccoli w/ Curry Sauce", "Vegetarian/Vegan (Entrée)"));
+        menu[4][0][1].add(new Food("Grilled Sausage Sticks", "Grill"));
+        menu[4][0][1].add(new Food("Pesto Chicken", "Pizza Station (Entrée)"));
+        menu[4][0][1].add(new Food("Chocolate Cream Pie", "Sweets"));
+
+        //Dinner
+        menu[4][0][2].add(new Food("Split Pea", "Soups 1"));
+        menu[4][0][2].add(new Food("Vegetable", "Soups 2"));
+        menu[4][0][2].add(new Food("Manicotti/Spicy Mushroom Marinara", "The Bar (Entrée)"));
+        menu[4][0][2].add(new Food("Chicken Florentine", "At Home (Entrée)"));
+        menu[4][0][2].add(new Food("Gardein Beef Teriyaki", "Vegetarian/Vegan (Entrée)"));
+        menu[4][0][2].add(new Food("Hawaiian BBQ Pork Sandwich", "Grill"));
+        menu[4][0][2].add(new Food("Pesto Chicken", "Pizza Station (Entrée)"));
+        menu[4][0][2].add(new Food("Chocolate Cream Pie", "Sweets"));
+
+        //Tuesday
+        //Breakfast
+        menu[4][1][0].add(new Food("Grits", "Breakfast Bar"));
+        menu[4][1][0].add(new Food("Open Face Sourdough Sandwich", "Breakfast Bar"));
+        menu[4][1][0].add(new Food("Spam", "Breakfast Bar"));
+        menu[4][1][0].add(new Food("Hash Brown Patty", "Breakfast Bar"));
+
+        //Lunch
+        menu[4][1][1].add(new Food("Italian Wedding", "Soups 1"));
+        menu[4][1][1].add(new Food("Potato Chowder", "Soups 2"));
+        menu[4][1][1].add(new Food("Chipotle Caesar Salad", "The Bar (Entrée)"));
+        menu[4][1][1].add(new Food("Chicken Tandori", "At Home (Entrée)"));
+        menu[4][1][1].add(new Food("Cheese Tortellini Pomadoro", "Vegetarian/Vegan (Entrée)"));
+        menu[4][1][1].add(new Food("Tortas Pambazos (Wet Tortas)", "Grill"));
+        menu[4][1][1].add(new Food("Florentine", "Pizza Station (Entrée)"));
+        menu[4][1][1].add(new Food("Mini Cream Puffs", "Sweets"));
+
+        //Dinner
+        menu[4][1][2].add(new Food("Italian Wedding", "Soups 1"));
+        menu[4][1][2].add(new Food("Potato Chowder ", "Soups 2"));
+        menu[4][1][2].add(new Food("Potato Bar", "The Bar (Entrée)"));
+        menu[4][1][2].add(new Food("Beef Enchiladas", "At Home (Entrée)"));
+        menu[4][1][2].add(new Food("Teriyaki Ginger Veggie Bowl", "Vegetarian/Vegan (Entrée)"));
+        menu[4][1][2].add(new Food("Beef Dip Sandwich", "Grill"));
+        menu[4][1][2].add(new Food("Florentine", "Pizza Station (Entrée)"));
+        menu[4][1][2].add(new Food("Mini Cream Puffs", "Sweets"));
+
+        //Wednesday
+        //Breakfast
+        menu[4][2][0].add(new Food("Sweet Rice w/ Milk", "Breakfast Bar"));
+        menu[4][2][0].add(new Food("Breakfast Burrito", "Breakfast Bar"));
+        menu[4][2][0].add(new Food("Sausage Links", "Breakfast Bar"));
+        menu[4][2][0].add(new Food("Country Potatoes", "Breakfast Bar"));
+
+        //Lunch
+        menu[4][2][1].add(new Food("Chicken Noodle", "Soups 1"));
+        menu[4][2][1].add(new Food("Broccoli Cheese", "Soups 2"));
+        menu[4][2][1].add(new Food("Taco Station", "The Bar (Entrée)"));
+        menu[4][2][1].add(new Food("Mongolian Beef", "At Home (Entrée)"));
+        menu[4][2][1].add(new Food("Asian Vegetable Noodle", "Vegetarian/Vegan (Entrée)"));
+        menu[4][2][1].add(new Food("Naan Chicken Sandwich", "Grill"));
+        menu[4][2][1].add(new Food("Buffalo Chicken", "Pizza Station (Entrée)"));
+        menu[4][2][1].add(new Food("Devil Cake", "Sweets"));
+
+        //Dinner
+        menu[4][2][2].add(new Food("Chicken Noodle", "Soups 1"));
+        menu[4][2][2].add(new Food("Broccoli Cheese", "Soups 2"));
+        menu[4][2][2].add(new Food("Apple Walnut Salad", "The Bar (Entrée)"));
+        menu[4][2][2].add(new Food("Kung Pao Chicken", "At Home (Entrée)"));
+        menu[4][2][2].add(new Food("Vegetable Tofu Curry", "Vegetarian/Vegan (Entrée)"));
+        menu[4][2][2].add(new Food("Hamburgers", "Grill"));
+        menu[4][2][2].add(new Food("Buffalo Chicken", "Pizza Station (Entrée)"));
+        menu[4][2][2].add(new Food("Devil Cake", "Sweets"));
+
+        //Thursday
+        //Breakfast
+        menu[4][3][0].add(new Food("Champurrado", "Breakfast Bar"));
+        menu[4][3][0].add(new Food("Chocolate Chip Pancakes", "Breakfast Bar"));
+        menu[4][3][0].add(new Food("Sausage Patty", "Breakfast Bar"));
+        menu[4][3][0].add(new Food("Tater Tots", "Breakfast Bar"));
+
+        //Lunch
+        menu[4][3][1].add(new Food("Pozole", "Soups 1"));
+        menu[4][3][1].add(new Food("Italian Raviol", "Soups 2"));
+        menu[4][3][1].add(new Food("Thai Beef Salad", "The Bar (Entrée)"));
+        menu[4][3][1].add(new Food("Cajun Chicken", "At Home (Entrée)"));
+        menu[4][3][1].add(new Food("Charro Pasta", "Vegetarian/Vegan (Entrée)"));
+        menu[4][3][1].add(new Food("Pesto Turkey Flatbread", "Grill"));
+        menu[4][3][1].add(new Food("Italian Sausage", "Pizza Station (Entrée)"));
+        menu[4][3][1].add(new Food("Confetti Cup Cake", "Sweets"));
+
+        //Dinner
+        menu[4][3][2].add(new Food("Pozole", "Soups 1"));
+        menu[4][3][2].add(new Food("Italian Raviol", "Soups 2"));
+        menu[4][3][2].add(new Food("Build Your Own Soup Bowl", "The Bar (Entrée)"));
+        menu[4][3][2].add(new Food("Thai BBQ Beef", "At Home (Entrée)"));
+        menu[4][3][2].add(new Food("Vegatable Noodle Stir Fry", "Vegetarian/Vegan (Entrée)"));
+        menu[4][3][2].add(new Food("Krispy Ranch Chicken Sandwich", "Grill"));
+        menu[4][3][2].add(new Food("Italian Sausage", "Pizza Station (Entrée)"));
+        menu[4][3][2].add(new Food("Confetti Cup Cake", "Sweets"));
+
+        //Friday
+        //Breakfast
+        menu[4][4][0].add(new Food("Cinnamon Rice", "Breakfast Bar"));
+        menu[4][4][0].add(new Food("Stuffed French Toast", "Breakfast Bar"));
+        menu[4][4][0].add(new Food("Bacon", "Breakfast Bar"));
+        menu[4][4][0].add(new Food("Potatoes O’Brien", "Breakfast Bar"));
+
+        //Lunch
+        menu[4][4][1].add(new Food("Clam Chowder", "Soups 1"));
+        menu[4][4][1].add(new Food("Minestrone", "Soups 2"));
+        menu[4][4][1].add(new Food("Crispy Chicken Salad", "The Bar (Entrée)"));
+        menu[4][4][1].add(new Food("Cod in Thai Red Curry Sauce", "At Home (Entrée)"));
+        menu[4][4][1].add(new Food("Vegetable Tempura", "Vegetarian/Vegan (Entrée)"));
+        menu[4][4][1].add(new Food("Quesadilla Al Pastor", "Grill"));
+        menu[4][4][1].add(new Food("Hawaiian", "Pizza Station (Entrée)"));
+        menu[4][4][1].add(new Food("Whoppie Pie", "Sweets"));
+
+        //Dinner
+        menu[4][4][2].add(new Food("Clam Chowder", "Soups 1"));
+        menu[4][4][2].add(new Food("Asi", "Soups 2"));
+        menu[4][4][2].add(new Food("Spinach Pear Salad", "The Bar (Entrée)"));
+        menu[4][4][2].add(new Food("Home Style Meat Loaf", "At Home (Entrée)"));
+        menu[4][4][2].add(new Food("Cheese Tortalini", "Vegetarian/Vegan (Entrée)"));
+        menu[4][4][2].add(new Food("Cajun Ranch Fish Sandwich", "Grill"));
+        menu[4][4][2].add(new Food("Hawaiian", "Pizza Station (Entrée)"));
+
+        //Saturday
+        //Breakfast
+        menu[4][5][0].add(new Food("Cream of Wheat", "Breakfast Bar"));
+        menu[4][5][0].add(new Food("Waffle Bar", "Breakfast Bar"));
+        menu[4][5][0].add(new Food("Little Smokies", "Breakfast Bar"));
+        menu[4][5][0].add(new Food("Hash Brown Patty", "Breakfast Bar"));
+
+        //Lunch
+        menu[4][5][1].add(new Food("Sausage & Lentil", "Soups 1"));
+        menu[4][5][1].add(new Food("Garden Vegetable", "Soups 2"));
+        menu[4][5][1].add(new Food("Roast Beef Carvery", "At Home (Entrée)"));
+        menu[4][5][1].add(new Food("Ravioli w/ Mushroom Marinara", "Vegetarian/Vegan (Entrée)"));
+
+        //Dinner
+        menu[4][5][2].add(new Food("Sausage & Lentil", "Soups 1"));
+        menu[4][5][2].add(new Food("Garden Vegetable", "Soups 2"));
+        menu[4][5][2].add(new Food("Greek Salad", "The Bar (Entrée)"));
+        menu[4][5][2].add(new Food("Meat Lasagna", "At Home (Entrée)"));
+        menu[4][5][2].add(new Food("Vegetable Lasagna", "Vegetarian/Vegan (Entrée)"));
+        menu[4][5][2].add(new Food("Wings-N-Things", "Grill"));
+        menu[4][5][2].add(new Food("Vegetable", "Pizza Station (Entrée)"));
+
+        //Sunday
+        //Breakfast
+        menu[4][6][0].add(new Food("Cream of Rice", "Breakfast Bar"));
+        menu[4][6][0].add(new Food("Biscuits & Gravy", "Breakfast Bar"));
+        menu[4][6][0].add(new Food("Turkey Sausage Patty", "Breakfast Bar"));
+        menu[4][6][0].add(new Food("Hash Brown", "Breakfast Bar"));
+
+        //Lunch
+        menu[4][6][1].add(new Food("Chicken Noodle", "Soups 1"));
+        menu[4][6][1].add(new Food("Tomato Basil", "Soups 2"));
+        menu[4][6][1].add(new Food("Spicy BBQ Chicken", "At Home (Entrée)"));
+        menu[4][6][1].add(new Food("Ravioli w/ Mushroom Marinara", "Vegetarian/Vegan (Entrée)"));
+
+        //Dinner
+        menu[4][6][2].add(new Food("Chicken Noodle", "Soups 1"));
+        menu[4][6][2].add(new Food("Tomato Basil", "Soups 2"));
+        menu[4][6][2].add(new Food("Caesar Salad", "The Bar (Entrée)"));
+        menu[4][6][2].add(new Food("Roast Turkey Breast", "At Home (Entrée)"));
+        menu[4][6][2].add(new Food("Cheese Ravioli w/ Pesto Alfredo", "Vegetarian/Vegan (Entrée)"));
+        menu[4][6][2].add(new Food("Fish & Chips", "Grill"));
+        menu[4][6][2].add(new Food("BBQ Chicken", "Pizza Station (Entrée)"));
     }
 
 

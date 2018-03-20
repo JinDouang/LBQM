@@ -24,9 +24,9 @@
         android:id="@+id/dateViewButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/CalendarViewButton"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/CalendarViewButton"
+        android:layout_toEndOf="@+id/spinner"
+        android:layout_toRightOf="@+id/spinner"
         android:background="@drawable/button_bg" />
 
 
@@ -75,10 +75,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="190dp"
-        android:layout_marginRight="190dp"
+        android:layout_toLeftOf="@+id/CalendarViewButton"
+        android:layout_toStartOf="@+id/CalendarViewButton"
         android:background="@drawable/button_bg"
         android:text="@string/campus" />
 

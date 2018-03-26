@@ -1,77 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lbqm.longbeachquickmenu.MainActivity"
-    android:orientation="vertical">
+    tools:layout_editor_absoluteY="25dp">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="189dp"
-        android:layout_height="match_parent"
-        android:layout_alignBottom="@+id/dateViewButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/button_bg"
-        android:paddingBottom="2dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="2dp" />
-
-    <Button
-        android:id="@+id/dateViewButton"
-        android:layout_width="match_parent"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/spinner"
-        android:layout_toRightOf="@+id/spinner"
-        android:background="@drawable/button_bg" />
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/button_bg"
+            android:paddingBottom="2dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="2dp" />
 
-    <Button
-        android:id="@+id/CampusViewButton"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="38dp"
-        android:layout_marginRight="38dp"
-        android:layout_toLeftOf="@+id/CalendarViewButton"
-        android:layout_toStartOf="@+id/CalendarViewButton"
-        android:background="@drawable/button_bg"
-        android:text="@string/campus" />
+        <Button
+            android:id="@+id/dateViewButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_bg" />
 
-    <Button
-        android:id="@+id/CalendarViewButton"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="58dp"
-        android:layout_marginStart="58dp"
-        android:layout_toEndOf="@+id/spinner"
-        android:layout_toRightOf="@+id/spinner"
-        android:background="@drawable/button_bg"
-        android:text="@string/calendar" />
-
-    <Button
-        android:id="@+id/menu"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/CampusViewButton"
-        android:layout_marginEnd="136dp"
-        android:layout_marginLeft="144dp"
-        android:layout_marginRight="136dp"
-        android:layout_marginStart="144dp"
-        android:background="@drawable/button_bg"
-        android:text="@string/menu" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textViewTest2"
@@ -79,23 +45,36 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="151dp"
+        android:layout_marginBottom="259dp"
+        android:layout_marginStart="146dp"
         android:text="@string/test"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/spinner"
-        android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginBottom="127dp"
+        android:text="HillSide"
         android:textSize="20sp"
-        android:text="HillSide" />
+        app:layout_constraintBottom_toTopOf="@+id/textViewTest2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTest2"
+        app:menu="@menu/navigation" />
 
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -2,10 +2,14 @@ package com.lbqm.longbeachquickmenu;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.lbqm.longbeachquickmenu.database.DatabaseBeachsideMenu;
 import com.lbqm.longbeachquickmenu.shared.services.CalendarService;
 import com.lbqm.longbeachquickmenu.shared.services.SpinnerService;
 
@@ -19,27 +23,31 @@ public class ParksideMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parkside_menu);
 
-        /* Access CalendarService */
+       /* Access to the Bottom Navigation View */
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_campus:
+                        startActivity(new Intent(ParksideMenu.this, MapsActivity.class));
+                        return true;
+                    case R.id.navigation_menu:
+                        startActivity(new Intent(ParksideMenu.this, MainActivity.class));
+                        return true;
+                    case R.id.navigation_calendar:
+                        new CalendarService(ParksideMenu.this).setCalendarFromBottomNav();
+                        return true;
+                }
+                return false;
+            }
+        });
+
+        /* Access CalendarService from top navigation */
         new CalendarService(ParksideMenu.this).setCalendar();
         /* set button spinner to switch category */
         new SpinnerService(ParksideMenu.this).setSpinner();
 
-
-//        /* Access Campus */
-//        Button Campus = (ParksideMenu.this).findViewById(R.id.CampusViewButton);
-//        Campus.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(v.getContext(), MapsActivity.class));
-//            }
-//        });
-//        /* Access Menu */
-//        Button Menu = (ParksideMenu.this).findViewById(R.id.menu);
-//        Menu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(v.getContext(), MainActivity.class));
-//            }
-//        });
+        DatabaseBeachsideMenu db = new DatabaseBeachsideMenu();
     }
 }

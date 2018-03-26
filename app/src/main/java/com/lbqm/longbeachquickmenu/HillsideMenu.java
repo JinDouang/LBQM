@@ -30,21 +30,21 @@ public class HillsideMenu extends AppCompatActivity {
         /* set button spinner to switch category */
         new SpinnerService(HillsideMenu.this).setSpinner();
         /* Access Campus */
-        Button Campus = (HillsideMenu.this).findViewById(R.id.CampusViewButton);
-        Campus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), MapsActivity.class));
-            }
-        });
-        /* Access Menu */
-        Button Menu = (HillsideMenu.this).findViewById(R.id.menu);
-        Menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), MainActivity.class));
-            }
-        });
+//        Button Campus = (HillsideMenu.this).findViewById(R.id.CampusViewButton);
+//        Campus.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(v.getContext(), MapsActivity.class));
+//            }
+//        });
+//        /* Access Menu */
+//        Button Menu = (HillsideMenu.this).findViewById(R.id.menu);
+//        Menu.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(v.getContext(), MainActivity.class));
+//            }
+//        });
 
 
         DatabaseBeachsideMenu test = new DatabaseBeachsideMenu();

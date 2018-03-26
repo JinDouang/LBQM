@@ -3,12 +3,19 @@ package com.lbqm.longbeachquickmenu.shared.services;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 
+import com.lbqm.longbeachquickmenu.MainActivity;
+import com.lbqm.longbeachquickmenu.MapsActivity;
 import com.lbqm.longbeachquickmenu.R;
 
 import java.text.SimpleDateFormat;
@@ -43,25 +50,48 @@ public class CalendarService {
         dateview.setText(Date);
 
         Button dateView = ((Activity) context).findViewById(R.id.dateViewButton);
-        Button calendarView = ((Activity) context).findViewById(R.id.CalendarViewButton);
 
-        calendarView.setOnClickListener(new View.OnClickListener() {
+
+        BottomNavigationView calendarView = ((Activity) context).findViewById(R.id.navigation);
+        calendarView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                java.util.Calendar cal = java.util.Calendar.getInstance();
-                int year = cal.get(java.util.Calendar.YEAR);
-                int month = cal.get(java.util.Calendar.MONTH);
-                int day = cal.get(java.util.Calendar.DAY_OF_MONTH);
-
-                DatePickerDialog dialog = new DatePickerDialog(
-                        context,
-                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        mDateSetListener,
-                        year,month,day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.navigation_calendar) {
+                    java.util.Calendar cal = java.util.Calendar.getInstance();
+                    int year = cal.get(java.util.Calendar.YEAR);
+                    int month = cal.get(java.util.Calendar.MONTH);
+                    int day = cal.get(java.util.Calendar.DAY_OF_MONTH);
+                    DatePickerDialog dialog = new DatePickerDialog(
+                            context,
+                            android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                            mDateSetListener,
+                            year,month,day);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    dialog.show();
+                }
+                return false;
             }
         });
+
+//        Button calendarView = ((Activity) context).findViewById(R.id.navigation);
+
+//        calendarView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                java.util.Calendar cal = java.util.Calendar.getInstance();
+//                int year = cal.get(java.util.Calendar.YEAR);
+//                int month = cal.get(java.util.Calendar.MONTH);
+//                int day = cal.get(java.util.Calendar.DAY_OF_MONTH);
+//
+//                DatePickerDialog dialog = new DatePickerDialog(
+//                        context,
+//                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+//                        mDateSetListener,
+//                        year,month,day);
+//                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                dialog.show();
+//            }
+//        });
 
         dateView.setOnClickListener(new View.OnClickListener() {
             @Override

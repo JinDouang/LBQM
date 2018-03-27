@@ -31,7 +31,7 @@ public class DatabaseParksideMenu {
         return myLength;
     }
 
-    public DatabaseBeachsideMenu() {
+    public DatabaseParksideMenu() {
 
         //Loop through 3d database and initialize every ArrayList to prevent "generic array creation" crash
         for (int c = 0; c < 5; c++){

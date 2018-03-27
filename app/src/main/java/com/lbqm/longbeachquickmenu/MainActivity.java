@@ -23,8 +23,6 @@ import com.lbqm.longbeachquickmenu.shared.services.SpinnerService;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private DatePickerDialog.OnDateSetListener mDateSetListener;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,36 +39,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button Park = findViewById(R.id.ParksideMenu);
         Park.setOnClickListener(this);
 
+
+        /* Remove nav menu */
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.getMenu().removeItem(R.id.navigation_menu);
+    }
 
-        /* Access Campus */
-//        Button Campus = (MainActivity.this).findViewById(R.id.CampusViewButton);
-//        Campus.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(v.getContext(), MapsActivity.class));
-//            }
-//        });
-
-
-//        navigation.getMenu().getItem(R.id.navigation_campus).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-//            @Override
-//            public boolean onMenuItemClick(MenuItem item) {
-//                startActivity(new Intent(MainActivity.this, MapsActivity.class));
-//                return false;
-//            }
-//        });
-
-//        MenuItem Campus = navigation.getMenu().getItem(R.id.navigation_campus);
-//        Campus.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-//            @Override
-//            public boolean onMenuItemClick(MenuItem item) {
-//                startActivity(new Intent(MainActivity.this, MapsActivity.class));
-//                return false;
-//            }
-//        });
-
+    /* Resume this activity when one activity is done */
+    @Override
+    public void onResume() {
+        super.onResume();
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -78,39 +57,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case R.id.navigation_campus:
                         startActivity(new Intent(MainActivity.this, MapsActivity.class));
                         return true;
+                    case R.id.navigation_calendar:
+                        new CalendarService(MainActivity.this).setCalendarFromBottomNav();
+                        return true;
                 }
                 return false;
             }
         });
-
-        /* Access CalendarService */
-      //  new CalendarService(MainActivity.this).setCalendar();
-
-        /* set button spinner to switch category */
-        new SpinnerService(MainActivity.this).setSpinner();
-
-    }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.navigation, menu);
-//        MenuItem Campus = menu.findItem(R.id.navigation_campus);
-//        Campus.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-//            @Override
-//            public boolean onMenuItemClick(MenuItem item) {
-//                startActivity(new Intent(MainActivity.this, MapsActivity.class));
-//                return false;
-//            }
-//        });
-//        return true;
-//    }
-
-
-    /* Resume this activity when one activity is done */
-    @Override
-    public void onResume() {
-        super.onResume();
         new CalendarService(MainActivity.this).setCalendar();
         new SpinnerService(MainActivity.this).setSpinner();
     }

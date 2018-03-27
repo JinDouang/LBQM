@@ -2,7 +2,10 @@ package com.lbqm.longbeachquickmenu;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -20,26 +23,30 @@ public class BeachsideMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.beachside_menu);
 
-        /* Access CalendarService */
+       /* Access to the Bottom Navigation View */
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_campus:
+                        startActivity(new Intent(BeachsideMenu.this, MapsActivity.class));
+                        return true;
+                    case R.id.navigation_menu:
+                        startActivity(new Intent(BeachsideMenu.this, MainActivity.class));
+                        return true;
+                    case R.id.navigation_calendar:
+                        new CalendarService(BeachsideMenu.this).setCalendarFromBottomNav();
+                        return true;
+                }
+                return false;
+            }
+        });
+
+        /* Access CalendarService from top navigation */
         new CalendarService(BeachsideMenu.this).setCalendar();
         /* set button spinner to switch category */
         new SpinnerService(BeachsideMenu.this).setSpinner();
-        /* Access Campus */
-//        Button Campus = (BeachsideMenu.this).findViewById(R.id.CampusViewButton);
-//        Campus.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(v.getContext(), MapsActivity.class));
-//            }
-//        });
-//        /* Access Menu */
-//        Button Menu = (BeachsideMenu.this).findViewById(R.id.menu);
-//        Menu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(v.getContext(), MainActivity.class));
-//            }
-//        });
 
         DatabaseBeachsideMenu db = new DatabaseBeachsideMenu();
 

@@ -60,20 +60,25 @@ public class HillsideMenu extends AppCompatActivity {
 
         TextView newtext = (TextView) findViewById(R.id.textViewTest2);
         System.out.println();
-        newtext.setText(test.getMenu(0,0,0).get(0).getName());
-
+        newtext.setText(fullMeal(0,4,2));
     }
 
     public String fullMeal(int cycle, int date, int time) {
-
         DatabaseBeachsideMenu menu = new DatabaseBeachsideMenu();
         String meal = "";
         int cycleLength = menu.getCycleLength();
         int dateLength = menu.getDayLength(cycle);
         int timeLength = menu.getTimeLength(cycle, date);
+        int foodLength = menu.getFoodLength(cycle, date, time);
         int i = 0;
 
+        while (i != foodLength) {
 
+            meal = meal + "\n" + menu.getMenu(cycle, date, time).get(i).getName();
+            System.out.println(meal);
+
+            i++;
+        }
 
 
 

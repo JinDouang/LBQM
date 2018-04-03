@@ -46,12 +46,14 @@
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="259dp"
-        android:layout_marginStart="180dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center_vertical|center_horizontal"
         android:text="@string/test"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
@@ -60,10 +62,11 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="127dp"
+        android:gravity="center_vertical|center_horizontal"
         android:text="HillSide"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textViewTest2"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <android.support.design.widget.BottomNavigationView

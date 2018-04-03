@@ -32,8 +32,18 @@ public class Singleton {
     public int getHall() {return hall;}
     public void setCycle() {}
     public int getCycle() {return cycle;}
-    public void setDay() {}
-    public int getDay() {return day;}
-    public void setCategory() {}
-    public int getCategory() {return category;}
+
+    public void setDay(int d) {
+        day = d;
+    }
+    public int getDay() {
+        return day;
+    }
+
+    public void setCategory(int c) {
+        category = c;
+    }
+    public int getCategory() {
+        return category;
+    }
 }

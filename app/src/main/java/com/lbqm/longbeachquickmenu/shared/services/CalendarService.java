@@ -17,6 +17,7 @@ import android.widget.DatePicker;
 import com.lbqm.longbeachquickmenu.MainActivity;
 import com.lbqm.longbeachquickmenu.MapsActivity;
 import com.lbqm.longbeachquickmenu.R;
+import com.lbqm.longbeachquickmenu.shared.Singleton;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -49,6 +50,7 @@ public class CalendarService {
         int year = cal.get(java.util.Calendar.YEAR);
         int month = cal.get(java.util.Calendar.MONTH);
         int day = cal.get(java.util.Calendar.DAY_OF_MONTH);
+
         DatePickerDialog dialog = new DatePickerDialog(context, android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                 new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -57,6 +59,7 @@ public class CalendarService {
                 calendar.set(Calendar.YEAR, year);
                 calendar.set(Calendar.MONTH, month);
                 calendar.set(Calendar.DAY_OF_MONTH, day);
+
 
                 Date = new SimpleDateFormat("MMMM dd, yyyy").format(calendar.getTime());
 
@@ -71,6 +74,8 @@ public class CalendarService {
     public void setCalendar() {
         dateview = ((Activity)context).findViewById(R.id.dateViewButton);
         dateview.setText(Date);
+        Singleton.day = convertDay(Calendar.getInstance().get(Calendar.DAY_OF_WEEK));
+        System.out.println("Singleton day = " + Singleton.day);
 
         Button dateView = ((Activity) context).findViewById(R.id.dateViewButton);
 
@@ -102,4 +107,17 @@ public class CalendarService {
             }
         });
     }
+
+    //Java.util.Calendar counts the days starting from Sunday, so Sunday is 1 and Saturday is 7. Our calendar starts with Monday on 0 and Sunday on 6, so this converts it to that format
+    private int convertDay(int d){
+        if (d == 1) return 6;
+        if (d == 2) return 0;
+        if (d == 3) return 1;
+        if (d == 4) return 2;
+        if (d == 5) return 3;
+        if (d == 6) return 4;
+        if (d == 7) return 5;
+        else return -1;
+    }
+
 }

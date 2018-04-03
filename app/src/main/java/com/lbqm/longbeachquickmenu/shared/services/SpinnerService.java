@@ -46,6 +46,8 @@ public class SpinnerService extends AppCompatActivity  {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Singleton.categoryFiltered = parent.getItemAtPosition(position).toString();
                 Singleton.position = position;
+                Singleton.category = position;
+                System.out.println("Singleton category = " + Singleton.category);
             }
 
             @Override

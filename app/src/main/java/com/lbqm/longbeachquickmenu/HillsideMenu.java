@@ -63,6 +63,9 @@ public class HillsideMenu extends AppCompatActivity {
         TextView newtext = (TextView) findViewById(R.id.textViewTest2);
 
         newtext.setText(fullMeal(cycle,day,time));
+
+        /* TODO Creating function to setText (callback function onCreate) for calendar/spinner category */
+
     }
 
     public String fullMeal(int cycle, int day, int time) {

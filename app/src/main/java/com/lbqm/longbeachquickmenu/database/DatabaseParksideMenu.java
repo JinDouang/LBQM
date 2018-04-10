@@ -13,6 +13,8 @@ public class DatabaseParksideMenu {
         return menu[cycle][day][time];
     }
 
+
+
     public int getCycleLength() {
         int myLength = 0;
         myLength = menu.length;

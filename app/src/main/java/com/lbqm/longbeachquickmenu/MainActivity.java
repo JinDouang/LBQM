@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(new Intent(MainActivity.this, MapsActivity.class));
                         return true;
                     case R.id.navigation_calendar:
-                        new CalendarService(MainActivity.this).setCalendarFromBottomNav();
+                        new CalendarService(MainActivity.this).setCalendar();
                         return true;
                 }
                 return false;

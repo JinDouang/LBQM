@@ -36,7 +36,7 @@ public class BeachsideMenu extends AppCompatActivity {
                         startActivity(new Intent(BeachsideMenu.this, MainActivity.class));
                         return true;
                     case R.id.navigation_calendar:
-                        new CalendarService(BeachsideMenu.this).setCalendarFromBottomNav();
+                        new CalendarService(BeachsideMenu.this).setCalendar();
                         return true;
                 }
                 return false;

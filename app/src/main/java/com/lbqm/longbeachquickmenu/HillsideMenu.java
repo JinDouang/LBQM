@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.lbqm.longbeachquickmenu.database.DatabaseBeachsideMenu;
+import com.lbqm.longbeachquickmenu.database.DatabaseHillsideMenu;
 import com.lbqm.longbeachquickmenu.shared.Singleton;
 import com.lbqm.longbeachquickmenu.shared.services.CalendarService;
 import com.lbqm.longbeachquickmenu.shared.services.SpinnerService;
@@ -44,7 +45,7 @@ public class HillsideMenu extends AppCompatActivity {
                         startActivity(new Intent(HillsideMenu.this, MainActivity.class));
                         return true;
                     case R.id.navigation_calendar:
-                        new CalendarService(HillsideMenu.this).setCalendarFromBottomNav();
+                        new CalendarService(HillsideMenu.this).setCalendar();
                         return true;
                 }
                 return false;
@@ -69,7 +70,7 @@ public class HillsideMenu extends AppCompatActivity {
     }
 
     public String fullMeal(int cycle, int day, int time) {
-        DatabaseBeachsideMenu menu = new DatabaseBeachsideMenu();
+        DatabaseHillsideMenu menu = new DatabaseHillsideMenu();
         String meal = "";
         int cycleLength = menu.getCycleLength();
         int dateLength = menu.getDayLength(cycle);
@@ -80,11 +81,11 @@ public class HillsideMenu extends AppCompatActivity {
         while (i != foodLength) {
 
             meal = meal + "\n" + menu.getMenu(cycle, day, time).get(i).getName();
-            System.out.println(meal);
+
 
             i++;
         }
-
+        System.out.println(meal);
 
 
         return meal;

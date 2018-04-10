@@ -36,7 +36,7 @@ public class ParksideMenu extends AppCompatActivity {
                         startActivity(new Intent(ParksideMenu.this, MainActivity.class));
                         return true;
                     case R.id.navigation_calendar:
-                        new CalendarService(ParksideMenu.this).setCalendarFromBottomNav();
+                        new CalendarService(ParksideMenu.this).setCalendar();
                         return true;
                 }
                 return false;

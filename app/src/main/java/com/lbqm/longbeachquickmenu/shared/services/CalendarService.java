@@ -52,6 +52,7 @@ public class CalendarService {
 
     public void initializeDay(){
         Singleton.day = convertDay(Calendar.getInstance().get(Calendar.DAY_OF_WEEK));
+        Singleton.weekOfYear = Calendar.getInstance().get(Calendar.WEEK_OF_YEAR);
         System.out.println("Initialize CalendarService Singleton day = " + Singleton.day);
     }
 
@@ -86,6 +87,7 @@ public class CalendarService {
                                 Date = new SimpleDateFormat("MMMM dd, yyyy").format(cal.getTime());
                                 Singleton.day = convertDay(cal.get(Calendar.DAY_OF_WEEK));
                                 System.out.println("setCalendar from NavView Singleton day = " + Singleton.day);
+                                Singleton.weekOfYear = cal.get(Calendar.WEEK_OF_YEAR);
 
                                 // change variable into service variable?
                                 dateview.setText(Date);
@@ -116,6 +118,7 @@ public class CalendarService {
                                 Date = new SimpleDateFormat("MMMM dd, yyyy").format(cal.getTime());
                                 Singleton.day = convertDay(cal.get(Calendar.DAY_OF_WEEK));
                                 System.out.println("setCalendar from dateView Singleton day = " + Singleton.day);
+                                Singleton.weekOfYear = cal.get(Calendar.WEEK_OF_YEAR);
 
                                 // change variable into service variable?
                                 dateview.setText(Date);

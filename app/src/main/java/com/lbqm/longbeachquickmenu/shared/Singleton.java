@@ -14,6 +14,10 @@ public class Singleton {
     public static int day = -1;
     public static int category = -1;
 
+//    public static int date = -1;
+//    public static int month = -1;
+    public static int weekOfYear = -1;
+
     /* TODO Use variale 'categories[]' in this class and make it use for MainActivity and other menu */
 
     /* List of categories */
@@ -28,10 +32,37 @@ public class Singleton {
 
 
     public void method() {}
-    public void setHall() {}
+    public void setHall(int h) {
+        //0 beachside, 1 parkside, 2 hillside
+        hall = h;
+        System.out.println("Singleton hall: " + hall);
+    }
     public int getHall() {return hall;}
     public void setCycle() {}
-    public int getCycle() {return cycle;}
+    public int getCycle(int week) {
+        //if hillside
+        if (hall == 2){
+            if (week < 13) {
+                cycle = week % 5;
+            }
+            if (week > 13 && week <= 19){
+                cycle = (week-1) % 5;
+            }
+            if (week >= 35 && week < 47){
+                cycle = week % 5;
+            }
+            if (week > 47 && week < 50){
+                cycle = (week-1) % 5;
+            }
+        }
+        //if beachside or parkside
+//        if (hall == 0 || hall == 1){
+//            cycle = (week + 1) % 5;
+//        }
+        System.out.println("Week of year: " + week);
+        System.out.println("Singleton Cycle: "+(cycle+1));
+        return cycle;
+    }
 
     public void setDay(int d) {
         day = d;

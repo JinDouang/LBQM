@@ -57,7 +57,8 @@ public class HillsideMenu extends AppCompatActivity {
         /* set button spinner to switch category */
         new SpinnerService(HillsideMenu.this).setSpinner();
 
-        int cycle = 0;
+        singleton.setHall(2);
+        int cycle = singleton.getCycle(Singleton.weekOfYear);
         int day = singleton.getDay();
         int time = singleton.getCategory();
 
@@ -72,9 +73,6 @@ public class HillsideMenu extends AppCompatActivity {
     public String fullMeal(int cycle, int day, int time) {
         DatabaseHillsideMenu menu = new DatabaseHillsideMenu();
         String meal = "";
-        int cycleLength = menu.getCycleLength();
-        int dateLength = menu.getDayLength(cycle);
-        int timeLength = menu.getTimeLength(cycle, day);
         int foodLength = menu.getFoodLength(cycle, day, time);
         int i = 0;
 

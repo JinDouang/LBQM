@@ -12,6 +12,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.DatePicker;
 
@@ -24,6 +25,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by jin on 25/02/2018.
@@ -37,12 +39,11 @@ public class CalendarService {
 
     private static Boolean initialized = false;
 
-    final java.util.Calendar cal = java.util.Calendar.getInstance();
-
-
+    private final Calendar calendar = Calendar.getInstance();
 
     /* Date variable that will be used to display view */
-    public static String Date =  new SimpleDateFormat("MMMM dd, yyyy").format(new Date());
+    private static Date Date =  new Date();
+
 
     public CalendarService(Context context) {
         this.context = context;
@@ -50,84 +51,89 @@ public class CalendarService {
         initialized = true;
     }
 
-    public void initializeDay(){
+    private void initializeDay(){
         Singleton.day = convertDay(Calendar.getInstance().get(Calendar.DAY_OF_WEEK));
         Singleton.weekOfYear = Calendar.getInstance().get(Calendar.WEEK_OF_YEAR);
         System.out.println("Initialize CalendarService Singleton day = " + Singleton.day);
     }
 
-    /* TODO optimize date, when calendar is clicked, the selected (black hover) day must be the current value and not currentDate */
-
     public void setCalendar() {
         dateview = ((Activity)context).findViewById(R.id.dateViewButton);
-        dateview.setText(Date);
-        System.out.println(Date);
 
+        // Used simpleDate format to change date format and to convert date into string to setText
+        dateview.setText(new SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(Date));
 
         Button dateView = ((Activity) context).findViewById(R.id.dateViewButton);
         BottomNavigationItemView navigationDateView = ((Activity) context).findViewById(R.id.navigation_calendar);
 
-        navigationDateView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                int year = cal.get(java.util.Calendar.YEAR);
-                int month = cal.get(java.util.Calendar.MONTH);
-                int day = cal.get(java.util.Calendar.DAY_OF_MONTH);
-
-                DatePickerDialog dialog = new DatePickerDialog(context, android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-
-                                cal.set(Calendar.YEAR, year);
-                                cal.set(Calendar.MONTH, month);
-                                cal.set(Calendar.DAY_OF_MONTH, day);
-
-                                Date = new SimpleDateFormat("MMMM dd, yyyy").format(cal.getTime());
-                                Singleton.day = convertDay(cal.get(Calendar.DAY_OF_WEEK));
-                                System.out.println("setCalendar from NavView Singleton day = " + Singleton.day);
-                                Singleton.weekOfYear = cal.get(Calendar.WEEK_OF_YEAR);
-
-                                // change variable into service variable?
-                                dateview.setText(Date);
-                            }
-                        }, year, month, day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
-            }
-        });
-
         dateView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int year = cal.get(java.util.Calendar.YEAR);
-                int month = cal.get(java.util.Calendar.MONTH);
-                int day = cal.get(java.util.Calendar.DAY_OF_MONTH);
+                calendar.setTime(Date);
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
 
                 DatePickerDialog dialog = new DatePickerDialog(context, android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
 
-                                cal.set(Calendar.YEAR, year);
-                                cal.set(Calendar.MONTH, month);
-                                cal.set(Calendar.DAY_OF_MONTH, day);
+                                calendar.set(Calendar.YEAR, year);
+                                calendar.set(Calendar.MONTH, month);
+                                calendar.set(Calendar.DAY_OF_MONTH, day);
 
-                                Date = new SimpleDateFormat("MMMM dd, yyyy").format(cal.getTime());
-                                Singleton.day = convertDay(cal.get(Calendar.DAY_OF_WEEK));
-                                System.out.println("setCalendar from dateView Singleton day = " + Singleton.day);
-                                Singleton.weekOfYear = cal.get(Calendar.WEEK_OF_YEAR);
+                                Date = calendar.getTime();
+                                Singleton.day = convertDay(calendar.get(Calendar.DAY_OF_WEEK));
+                                Singleton.weekOfYear = calendar.get(Calendar.WEEK_OF_YEAR);
 
-                                // change variable into service variable?
-                                dateview.setText(Date);
+                                // Used simpleDate format to change date format and to convert date into string to setText
+                                dateview.setText(new SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(Date));
                             }
                         }, year, month, day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                Window window = dialog.getWindow();
+                if (window != null) {
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                }
                 dialog.show();
             }
         });
+
+        navigationDateView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                calendar.setTime(Date);
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(context, android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+
+                                calendar.set(Calendar.YEAR, year);
+                                calendar.set(Calendar.MONTH, month);
+                                calendar.set(Calendar.DAY_OF_MONTH, day);
+
+                                Date = calendar.getTime();
+
+                                Singleton.day = convertDay(calendar.get(Calendar.DAY_OF_WEEK));
+                                System.out.println("setCalendar from NavView Singleton day = " + Singleton.day);
+                                Singleton.weekOfYear = calendar.get(Calendar.WEEK_OF_YEAR);
+
+                                // Used simpleDate format to change date format and to convert date into string to setText
+                                dateview.setText(new SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(Date));
+                            }
+                        }, year, month, day);
+                Window window = dialog.getWindow();
+                if (window != null) {
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                }
+                dialog.show();
+            }
+        });
+
     }
 
     //Java.util.Calendar counts the days starting from Sunday, so Sunday is 1 and Saturday is 7. Our calendar starts with Monday on 0 and Sunday on 6, so this converts it to that format

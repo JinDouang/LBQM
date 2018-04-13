@@ -21,17 +21,17 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BeachsideMenu" />
-        <activity android:name=".HillsideMenu" />
-        <activity android:name=".ParksideMenu" />
-        <activity android:name=".shared.services.CalendarService" />
-        <activity android:name=".shared.services.SpinnerService" />
-        <activity android:name=".CampusActivity" />
-        <activity android:name=".shared.Singleton" />
+        <activity android:name=".BeachsideMenu"
+            android:label="Beachside"/>
+        <activity android:name=".HillsideMenu"
+            android:label="Hillside"/>
+        <activity android:name=".ParksideMenu"
+            android:label="Parkside"/>
+        <activity android:name=".CampusActivity"
+            android:label="Campus"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -47,9 +47,6 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2"></activity>
     </application>
 
 </manifest>

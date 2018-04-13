@@ -1,5 +1,6 @@
 package com.lbqm.longbeachquickmenu;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 
@@ -16,17 +17,22 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import com.lbqm.longbeachquickmenu.shared.services.CalendarService;
 import com.lbqm.longbeachquickmenu.shared.services.SpinnerService;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends Activity implements View.OnClickListener {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         /* Set button for each menu in order to redirect to their own view. */

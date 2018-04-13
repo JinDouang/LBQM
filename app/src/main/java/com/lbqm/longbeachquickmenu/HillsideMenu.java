@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
-import com.lbqm.longbeachquickmenu.database.DatabaseBeachsideMenu;
 import com.lbqm.longbeachquickmenu.database.DatabaseHillsideMenu;
 import com.lbqm.longbeachquickmenu.shared.Singleton;
 import com.lbqm.longbeachquickmenu.shared.services.CalendarService;
@@ -30,6 +28,11 @@ public class HillsideMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+            actionBar.setCustomView(R.layout.hillside_title);
+        }
         setContentView(R.layout.hillside_menu);
 
         /* Access to the Bottom Navigation View */

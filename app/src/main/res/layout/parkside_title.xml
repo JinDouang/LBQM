@@ -11,6 +11,6 @@
         android:text="@string/Parkside"
         android:textColor="#ffffff"
         android:id="@+id/mytext"
-        android:textSize="18sp" />
+        android:textSize="25sp" />
 
 </LinearLayout>

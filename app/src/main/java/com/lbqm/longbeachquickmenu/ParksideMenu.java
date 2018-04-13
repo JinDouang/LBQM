@@ -23,7 +23,7 @@ public class ParksideMenu extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-            actionBar.setCustomView(R.layout.campus_title);
+            actionBar.setCustomView(R.layout.parkside_title);
         }
         setContentView(R.layout.parkside_menu);
 

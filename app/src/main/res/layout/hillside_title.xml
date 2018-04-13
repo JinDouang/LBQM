@@ -10,7 +10,6 @@
         android:layout_gravity="center"
         android:text="@string/Hillside"
         android:textColor="#ffffff"
-        android:id="@+id/mytext"
         android:textSize="25sp" />
 
 </LinearLayout>

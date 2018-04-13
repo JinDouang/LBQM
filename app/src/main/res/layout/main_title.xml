@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/Parkside"
+        android:text="@string/menus"
         android:textColor="#ffffff"
         android:textSize="25sp" />
 

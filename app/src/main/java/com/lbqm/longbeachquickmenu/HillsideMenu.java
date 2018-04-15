@@ -97,12 +97,16 @@ public class HillsideMenu extends AppCompatActivity {
         int foodLength = menu.getFoodLength(cycle, day, time);
         int i = 0;
 
+
         while (i != foodLength) {
 
             meal = meal + "\n" + menu.getMenu(cycle, day, time).get(i).getName();
 
 
             i++;
+        }
+        if (meal.equals("")) {
+            meal = "No dining hall today";
         }
         System.out.println(meal);
 

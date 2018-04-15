@@ -2,12 +2,15 @@ package com.lbqm.longbeachquickmenu.shared.services;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
+import com.lbqm.longbeachquickmenu.HillsideMenu;
+import com.lbqm.longbeachquickmenu.ParksideMenu;
 import com.lbqm.longbeachquickmenu.R;
 import com.lbqm.longbeachquickmenu.shared.Singleton;
 
@@ -17,15 +20,10 @@ import com.lbqm.longbeachquickmenu.shared.Singleton;
 
 /* This service will update and interact spinner, [ALWAYS] use the @id spinner */
 
-public class SpinnerService extends AppCompatActivity  {
-
-    /* Init spinner button */
-    Spinner sp;
-
-    ArrayAdapter<String> adapter;
+public class SpinnerService {
+    private Singleton singleton = new Singleton();
 
     private Context context;
-
 
     public SpinnerService(Context context) {
         this.context = context;
@@ -34,8 +32,8 @@ public class SpinnerService extends AppCompatActivity  {
 
     /* Method that will make view category */
     public void setSpinner() {
-        sp = ((Activity) context).findViewById(R.id.spinner);
-        adapter = new ArrayAdapter<>(context, R.layout.spinner_item, Singleton.categories);
+        Spinner sp = ((Activity) context).findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(context, R.layout.spinner_item, Singleton.categories);
         sp.setAdapter(adapter);
 
         /* Save selected spinner position to keep the view updated */
@@ -48,6 +46,23 @@ public class SpinnerService extends AppCompatActivity  {
                 Singleton.position = position;
                 Singleton.category = position;
                 System.out.println("Singleton category = " + Singleton.category);
+
+                /* Code below will display our menu dynamically */
+                singleton.setHall(2);
+                int cycle = singleton.getCycle(Singleton.weekOfYear);
+                int day = singleton.getDay();
+                int time = singleton.getCategory();
+
+                if (HillsideMenu.isActive) {
+                    Log.d("[HillsideMenu]", String.valueOf(HillsideMenu.isActive));
+
+                    TextView newtext = ((Activity) context).findViewById(R.id.textViewTest2);
+                    newtext.setText(HillsideMenu.fullMeal(cycle,day,time));
+                }
+                if (ParksideMenu.isActive) {
+                    Log.d("[ParksideMenu]", String.valueOf(ParksideMenu.isActive));
+                }
+
             }
 
             @Override

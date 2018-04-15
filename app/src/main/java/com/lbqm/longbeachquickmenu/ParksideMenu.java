@@ -17,6 +17,20 @@ import com.lbqm.longbeachquickmenu.shared.services.SpinnerService;
  */
 
 public class ParksideMenu extends AppCompatActivity {
+    public static boolean isActive = false;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        isActive = true;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        isActive = false;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -21,9 +21,23 @@ import com.lbqm.longbeachquickmenu.shared.services.SpinnerService;
 public class HillsideMenu extends AppCompatActivity {
     //String[] test = {"MOT!", "MOT2", "MOT3"};
     //test.getMenu(0,0,0).get(0).getName()
+    public static boolean isActive = false;
+
 
     Singleton singleton = new Singleton();
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        isActive = true;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        isActive = false;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,15 +79,19 @@ public class HillsideMenu extends AppCompatActivity {
         int day = singleton.getDay();
         int time = singleton.getCategory();
 
-        TextView newtext = (TextView) findViewById(R.id.textViewTest2);
+        TextView newtext = findViewById(R.id.textViewTest2);
 
         newtext.setText(fullMeal(cycle,day,time));
 
-        /* TODO Creating function to setText (callback function onCreate) for calendar/spinner category */
+
+        /* newtext updated (see SpinnerService) */
+
+        /* TODO make the view display (we have to choose a date to the calendar service to display our menu...) */
+
 
     }
 
-    public String fullMeal(int cycle, int day, int time) {
+    public static String fullMeal(int cycle, int day, int time) {
         DatabaseHillsideMenu menu = new DatabaseHillsideMenu();
         String meal = "";
         int foodLength = menu.getFoodLength(cycle, day, time);

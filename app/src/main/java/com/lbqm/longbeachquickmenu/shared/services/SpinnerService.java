@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.lbqm.longbeachquickmenu.BeachsideMenu;
 import com.lbqm.longbeachquickmenu.HillsideMenu;
 import com.lbqm.longbeachquickmenu.ParksideMenu;
 import com.lbqm.longbeachquickmenu.R;
@@ -61,6 +62,9 @@ public class SpinnerService {
                 }
                 if (ParksideMenu.isActive) {
                     Log.d("[ParksideMenu]", String.valueOf(ParksideMenu.isActive));
+                }
+                if (BeachsideMenu.isActive) {
+                    Log.d("[BeachsideMenu]", String.valueOf(BeachsideMenu.isActive));
                 }
 
             }

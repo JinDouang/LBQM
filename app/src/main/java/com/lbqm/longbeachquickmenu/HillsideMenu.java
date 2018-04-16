@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -19,13 +20,10 @@ import com.lbqm.longbeachquickmenu.shared.services.SpinnerService;
  */
 
 public class HillsideMenu extends AppCompatActivity {
-    //String[] test = {"MOT!", "MOT2", "MOT3"};
-    //test.getMenu(0,0,0).get(0).getName()
+
     public static boolean isActive = false;
 
-
     Singleton singleton = new Singleton();
-
 
     @Override
     protected void onStart() {
@@ -85,32 +83,24 @@ public class HillsideMenu extends AppCompatActivity {
 
 
         /* newtext updated (see SpinnerService) */
-
-        /* TODO make the view display (we have to choose a date to the calendar service to display our menu...) */
-
+        /* TODO missing the view updated with date (need to change CalendarService) */
 
     }
 
     public static String fullMeal(int cycle, int day, int time) {
         DatabaseHillsideMenu menu = new DatabaseHillsideMenu();
-        String meal = "";
+        StringBuilder meal = new StringBuilder();
         int foodLength = menu.getFoodLength(cycle, day, time);
-        int i = 0;
 
-
-        while (i != foodLength) {
-
-            meal = meal + "\n" + menu.getMenu(cycle, day, time).get(i).getName();
-
-
-            i++;
+        for (int i = 0; i != foodLength; i++) {
+            meal.append("\n").append(menu.getMenu(cycle, day, time).get(i).getName());
         }
-        if (meal.equals("")) {
-            meal = "No dining hall today";
+
+        if (meal.toString().equals("")) {
+            meal = new StringBuilder("No dining hall for this day");
         }
-        System.out.println(meal);
 
-
-        return meal;
+        Log.d("[Hillside Meal Method]", String.valueOf(meal));
+        return meal.toString();
     }
 }

@@ -11,8 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.lbqm.longbeachquickmenu.shared.services.CalendarService;
-import com.lbqm.longbeachquickmenu.shared.services.SpinnerService;
+import com.lbqm.longbeachquickmenu.shared.services.CalendarMenuService;
+import com.lbqm.longbeachquickmenu.shared.services.SpinnerMenuService;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -55,14 +55,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(new Intent(MainActivity.this, MapsActivity.class));
                         return true;
                     case R.id.navigation_calendar:
-                        new CalendarService(MainActivity.this).setCalendar();
+                        new CalendarMenuService(MainActivity.this).setCalendar();
                         return true;
                 }
                 return false;
             }
         });
-        new CalendarService(MainActivity.this).setCalendar();
-        new SpinnerService(MainActivity.this).setSpinner();
+        new CalendarMenuService(MainActivity.this).setCalendar();
+        new SpinnerMenuService(MainActivity.this).setSpinner();
     }
 
     /* Start new activity if id chosen is clicked. */

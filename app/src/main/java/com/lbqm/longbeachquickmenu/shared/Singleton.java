@@ -1,27 +1,18 @@
 package com.lbqm.longbeachquickmenu.shared;
 
-import android.util.Log;
-
-import com.lbqm.longbeachquickmenu.HillsideMenu;
-import com.lbqm.longbeachquickmenu.database.DatabaseHillsideMenu;
-
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
 /**
  * Created by jin on 14/03/2018.
  */
 
 // This Singleton class will be used for annex information (categories, map...)
 public class Singleton {
-    private static final Singleton ourInstance = new Singleton();
 
-    public static int hall = -1;
-    public static int cycle = -1;
-    public static int day = -1;
-    public static int category = -1;
+    public static int hall;
+    public static int cycle;
+    public static int day;
+    public static int category;
 
-    public static int weekOfYear = -1;
+    public static int weekOfYear;
 
     /* List of categories */
     public static String categories[] = {"Breakfast", "Lunch", "Dinner"};
@@ -57,7 +48,7 @@ public class Singleton {
         }
 
         System.out.println("Week of year: " + week);
-        System.out.println("Singleton Cycle: "+(cycle+1));
+        System.out.println("Singleton Cycle: " + (cycle + 1));
         return cycle;
     }
 

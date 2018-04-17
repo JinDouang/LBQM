@@ -29,7 +29,7 @@ import java.util.Locale;
  * Created by jin on 25/02/2018.
  */
 
-public class CalendarService {
+public class CalendarMenuService {
 
     private Button dateview;
 
@@ -45,7 +45,7 @@ public class CalendarService {
     private static Date Date =  new Date();
 
 
-    public CalendarService(Context context) {
+    public CalendarMenuService(Context context) {
         this.context = context;
         if (!initialized) initializeDay();
         initialized = true;
@@ -54,7 +54,7 @@ public class CalendarService {
     private void initializeDay(){
         Singleton.day = convertDay(Calendar.getInstance().get(Calendar.DAY_OF_WEEK));
         Singleton.weekOfYear = Calendar.getInstance().get(Calendar.WEEK_OF_YEAR);
-        System.out.println("Initialize CalendarService Singleton day = " + Singleton.day);
+        System.out.println("Initialize CalendarMenuService Singleton day = " + Singleton.day);
     }
 
     public void setCalendar() {
@@ -65,6 +65,10 @@ public class CalendarService {
 
         Button dateView = ((Activity) context).findViewById(R.id.dateViewButton);
         BottomNavigationItemView navigationDateView = ((Activity) context).findViewById(R.id.navigation_calendar);
+
+        // Menu View from 3 menus
+        final TextView menu = ((Activity) context).findViewById(R.id.menu);
+
 
         dateView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,27 +94,17 @@ public class CalendarService {
                                 // Used simpleDate format to change date format and to convert date into string to setText
                                 dateview.setText(new SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(Date));
 
-                                int cycle = singleton.getCycle(Singleton.weekOfYear);
-                                int weekday = singleton.getDay();
-                                int time = singleton.getCategory();
-
                                 if (HillsideMenu.isActive) {
                                     Log.d("[HillsideMenu]", String.valueOf(HillsideMenu.isActive));
-
-                                    TextView menu = ((Activity) context).findViewById(R.id.menu);
-                                    menu.setText(HillsideMenu.getMenu(cycle, weekday, time));
+                                    menu.setText(HillsideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
                                 }
                                 if (ParksideMenu.isActive) {
                                     Log.d("[ParksideMenu]", String.valueOf(ParksideMenu.isActive));
-
-                                    TextView menu = ((Activity) context).findViewById(R.id.menu);
-                                    menu.setText(ParksideMenu.getMenu(cycle, weekday, time));
+                                    menu.setText(ParksideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
                                 }
                                 if (BeachsideMenu.isActive) {
                                     Log.d("[BeachsideMenu]", String.valueOf(BeachsideMenu.isActive));
-
-                                    TextView menu = ((Activity) context).findViewById(R.id.menu);
-                                    menu.setText(BeachsideMenu.getMenu(cycle, weekday, time));
+                                    menu.setText(BeachsideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
                                 }
                             }
                         }, year, month, day);
@@ -119,7 +113,6 @@ public class CalendarService {
                     dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 }
                 dialog.show();
-                Log.d("[HillsideMenu]", String.valueOf(HillsideMenu.isActive));
             }
         });
 
@@ -149,28 +142,19 @@ public class CalendarService {
                                 // Used simpleDate format to change date format and to convert date into string to setText
                                 dateview.setText(new SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(Date));
 
-                                int cycle = singleton.getCycle(Singleton.weekOfYear);
-                                int weekday = singleton.getDay();
-                                int time = singleton.getCategory();
-
-
                                 if (HillsideMenu.isActive) {
                                     Log.d("[HillsideMenu]", String.valueOf(HillsideMenu.isActive));
-
-                                    TextView menu = ((Activity) context).findViewById(R.id.menu);
-                                    menu.setText(HillsideMenu.getMenu(cycle, weekday, time));
+                                    menu.setText(HillsideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
                                 }
                                 if (ParksideMenu.isActive) {
-
-                                    TextView menu = ((Activity) context).findViewById(R.id.menu);
-                                    menu.setText(ParksideMenu.getMenu(cycle, weekday, time));
+                                    Log.d("[ParksideMenu]", String.valueOf(ParksideMenu.isActive));
+                                    menu.setText(ParksideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
                                 }
                                 if (BeachsideMenu.isActive) {
                                     Log.d("[BeachsideMenu]", String.valueOf(BeachsideMenu.isActive));
-
-                                    TextView menu = ((Activity) context).findViewById(R.id.menu);
-                                    menu.setText(BeachsideMenu.getMenu(cycle, weekday, time));
+                                    menu.setText(BeachsideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
                                 }
+
                             }
                         }, year, month, day);
                 Window window = dialog.getWindow();

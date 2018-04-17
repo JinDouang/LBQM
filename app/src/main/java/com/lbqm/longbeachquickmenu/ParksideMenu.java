@@ -10,11 +10,10 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.lbqm.longbeachquickmenu.database.DatabaseBeachsideMenu;
 import com.lbqm.longbeachquickmenu.database.DatabaseParksideMenu;
 import com.lbqm.longbeachquickmenu.shared.Singleton;
-import com.lbqm.longbeachquickmenu.shared.services.CalendarService;
-import com.lbqm.longbeachquickmenu.shared.services.SpinnerService;
+import com.lbqm.longbeachquickmenu.shared.services.CalendarMenuService;
+import com.lbqm.longbeachquickmenu.shared.services.SpinnerMenuService;
 
 /**
  * Created by jin on 25/02/2018.
@@ -24,7 +23,6 @@ public class ParksideMenu extends AppCompatActivity {
     public static boolean isActive = false;
 
     Singleton singleton = new Singleton();
-
 
     @Override
     protected void onStart() {
@@ -61,26 +59,25 @@ public class ParksideMenu extends AppCompatActivity {
                         startActivity(new Intent(ParksideMenu.this, MainActivity.class));
                         return true;
                     case R.id.navigation_calendar:
-                        new CalendarService(ParksideMenu.this).setCalendar();
+                        new CalendarMenuService(ParksideMenu.this).setCalendar();
                         return true;
                 }
                 return false;
             }
         });
 
-        /* Access CalendarService from top navigation */
-        new CalendarService(ParksideMenu.this).setCalendar();
+        /* Access CalendarMenuService from top navigation */
+        new CalendarMenuService(ParksideMenu.this).setCalendar();
         /* set button spinner to switch category */
-        new SpinnerService(ParksideMenu.this).setSpinner();
+        new SpinnerMenuService(ParksideMenu.this).setSpinner();
 
         singleton.setHall(2);
-        int cycle = singleton.getCycle(Singleton.weekOfYear);
-        int day = singleton.getDay();
-        int time = singleton.getCategory();
 
         TextView menu = findViewById(R.id.menu);
 
-        menu.setText(ParksideMenu.getMenu(cycle,day,time));
+        menu.setText(ParksideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
+
+        /* Menu updated (see SpinnerMenuService/CalendarMenuService) */
     }
 
     public static String getMenu(int cycle, int day, int time) {

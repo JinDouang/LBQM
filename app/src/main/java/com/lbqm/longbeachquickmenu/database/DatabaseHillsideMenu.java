@@ -10,28 +10,8 @@ public class DatabaseHillsideMenu {
         return menu[cycle][day][time];
     }
 
-    public int getCycleLength() {
-        int myLength = 0;
-        myLength = menu.length;
-        return myLength;
-    }
-
-    public int getDayLength(int cycle) {
-        int myLength = 0;
-        myLength = menu[cycle].length;
-        return myLength;
-    }
-
-    public int getTimeLength(int cycle, int day) {
-        int myLength = 0;
-        myLength = menu[cycle][day].length;
-        return myLength;
-    }
-
     public int getFoodLength(int cycle, int day, int time) {
-        int myLength = 0;
-        myLength = menu[cycle][day][time].size();
-        return myLength;
+        return menu[cycle][day][time].size();
     }
 
     public DatabaseHillsideMenu() {

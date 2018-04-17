@@ -22,12 +22,12 @@ import com.lbqm.longbeachquickmenu.shared.Singleton;
 
 /* This service will update and interact spinner, [ALWAYS] use the @id spinner */
 
-public class SpinnerService {
+public class SpinnerMenuService {
     private Singleton singleton = new Singleton();
 
     private Context context;
 
-    public SpinnerService(Context context) {
+    public SpinnerMenuService(Context context) {
         this.context = context;
 
     }
@@ -51,27 +51,19 @@ public class SpinnerService {
 
                 /* Code below will display our menu dynamically */
                 singleton.setHall(2);
-                int cycle = singleton.getCycle(Singleton.weekOfYear);
-                int day = singleton.getDay();
-                int time = singleton.getCategory();
+                TextView menu = ((Activity) context).findViewById(R.id.menu);
 
                 if (HillsideMenu.isActive) {
                     Log.d("[HillsideMenu]", String.valueOf(HillsideMenu.isActive));
-
-                    TextView menu = ((Activity) context).findViewById(R.id.menu);
-                    menu.setText(HillsideMenu.getMenu(cycle,day,time));
+                    menu.setText(HillsideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
                 }
                 if (ParksideMenu.isActive) {
                     Log.d("[ParksideMenu]", String.valueOf(ParksideMenu.isActive));
-
-                    TextView menu = ((Activity) context).findViewById(R.id.menu);
-                    menu.setText(ParksideMenu.getMenu(cycle,day,time));
+                    menu.setText(ParksideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
                 }
                 if (BeachsideMenu.isActive) {
                     Log.d("[BeachsideMenu]", String.valueOf(BeachsideMenu.isActive));
-
-                    TextView menu = ((Activity) context).findViewById(R.id.menu);
-                    menu.setText(BeachsideMenu.getMenu(cycle,day,time));
+                    menu.setText(BeachsideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
                 }
 
             }

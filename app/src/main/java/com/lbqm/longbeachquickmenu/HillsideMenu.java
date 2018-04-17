@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import com.lbqm.longbeachquickmenu.database.DatabaseHillsideMenu;
 import com.lbqm.longbeachquickmenu.shared.Singleton;
-import com.lbqm.longbeachquickmenu.shared.services.CalendarService;
-import com.lbqm.longbeachquickmenu.shared.services.SpinnerService;
+import com.lbqm.longbeachquickmenu.shared.services.CalendarMenuService;
+import com.lbqm.longbeachquickmenu.shared.services.SpinnerMenuService;
 
 /**
  * Created by jin on 25/02/2018.
@@ -60,30 +60,25 @@ public class HillsideMenu extends AppCompatActivity {
                         startActivity(new Intent(HillsideMenu.this, MainActivity.class));
                         return true;
                     case R.id.navigation_calendar:
-                        new CalendarService(HillsideMenu.this).setCalendar();
+                        new CalendarMenuService(HillsideMenu.this).setCalendar();
                         return true;
                 }
                 return false;
             }
         });
 
-        /* Access CalendarService from top navigation */
-        new CalendarService(HillsideMenu.this).setCalendar();
+        /* Access CalendarMenuService from top navigation */
+        new CalendarMenuService(HillsideMenu.this).setCalendar();
         /* set button spinner to switch category */
-        new SpinnerService(HillsideMenu.this).setSpinner();
+        new SpinnerMenuService(HillsideMenu.this).setSpinner();
 
         singleton.setHall(2);
-        int cycle = singleton.getCycle(Singleton.weekOfYear);
-        int day = singleton.getDay();
-        int time = singleton.getCategory();
 
         TextView menu = findViewById(R.id.menu);
 
-        menu.setText(HillsideMenu.getMenu(cycle,day,time));
+        menu.setText(HillsideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
 
-
-        /* newtext updated (see SpinnerService) */
-
+        /* Menu updated (see SpinnerMenuService/CalendarMenuService) */
     }
 
     public static String getMenu(int cycle, int day, int time) {

@@ -92,8 +92,8 @@ public class CalendarService {
                                 int weekday = singleton.getDay();
                                 int time = singleton.getCategory();
 
-                                TextView newtext = ((Activity) context).findViewById(R.id.textViewTest2);
-                                newtext.setText(HillsideMenu.fullMeal(cycle,weekday,time));
+                                TextView newtext = ((Activity) context).findViewById(R.id.menu);
+                                newtext.setText(HillsideMenu.getMenu(cycle,weekday,time));
                             }
                         }, year, month, day);
                 Window window = dialog.getWindow();
@@ -135,8 +135,8 @@ public class CalendarService {
                                 int weekday = singleton.getDay();
                                 int time = singleton.getCategory();
 
-                                TextView newtext = ((Activity) context).findViewById(R.id.textViewTest2);
-                                newtext.setText(HillsideMenu.fullMeal(cycle,weekday,time));
+                                TextView newtext = ((Activity) context).findViewById(R.id.menu);
+                                newtext.setText(HillsideMenu.getMenu(cycle,weekday,time));
                             }
                         }, year, month, day);
                 Window window = dialog.getWindow();

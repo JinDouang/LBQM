@@ -8,7 +8,6 @@ package com.lbqm.longbeachquickmenu.shared;
 public class Singleton {
     private static final Singleton ourInstance = new Singleton();
 
-    public static String customVar = "Hello";
     public static int hall = -1;
     public static int cycle = -1;
     public static int day = -1;
@@ -17,8 +16,6 @@ public class Singleton {
 //    public static int date = -1;
 //    public static int month = -1;
     public static int weekOfYear = -1;
-
-    /* TODO Use variale 'categories[]' in this class and make it use for MainActivity and other menu */
 
     /* List of categories */
     public static String categories[] = {"Breakfast", "Lunch", "Dinner"};
@@ -30,15 +27,11 @@ public class Singleton {
     public Singleton() {
     }
 
-
-    public void method() {}
     public void setHall(int h) {
         //0 beachside, 1 parkside, 2 hillside
         hall = h;
         System.out.println("Singleton hall: " + hall);
     }
-    public int getHall() {return hall;}
-    public void setCycle() {}
     public int getCycle(int week) {
         //if hillside
         if (hall == 2){
@@ -64,16 +57,10 @@ public class Singleton {
         return cycle;
     }
 
-    public void setDay(int d) {
-        day = d;
-    }
     public int getDay() {
         return day;
     }
 
-    public void setCategory(int c) {
-        category = c;
-    }
     public int getCategory() {
         return category;
     }

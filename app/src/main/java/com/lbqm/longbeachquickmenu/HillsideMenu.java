@@ -77,9 +77,9 @@ public class HillsideMenu extends AppCompatActivity {
         int day = singleton.getDay();
         int time = singleton.getCategory();
 
-        TextView newtext = findViewById(R.id.textViewTest2);
+        TextView newtext = findViewById(R.id.menu);
 
-        newtext.setText(fullMeal(cycle,day,time));
+        newtext.setText(getMenu(cycle,day,time));
 
 
         /* newtext updated (see SpinnerService) */
@@ -87,7 +87,7 @@ public class HillsideMenu extends AppCompatActivity {
 
     }
 
-    public static String fullMeal(int cycle, int day, int time) {
+    public static String getMenu(int cycle, int day, int time) {
         DatabaseHillsideMenu menu = new DatabaseHillsideMenu();
         StringBuilder meal = new StringBuilder();
         int foodLength = menu.getFoodLength(cycle, day, time);

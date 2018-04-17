@@ -58,8 +58,8 @@ public class SpinnerService {
                 if (HillsideMenu.isActive) {
                     Log.d("[HillsideMenu]", String.valueOf(HillsideMenu.isActive));
 
-                    TextView newtext = ((Activity) context).findViewById(R.id.textViewTest2);
-                    newtext.setText(HillsideMenu.fullMeal(cycle,day,time));
+                    TextView newtext = ((Activity) context).findViewById(R.id.menu);
+                    newtext.setText(HillsideMenu.getMenu(cycle,day,time));
                 }
                 if (ParksideMenu.isActive) {
                     Log.d("[ParksideMenu]", String.valueOf(ParksideMenu.isActive));

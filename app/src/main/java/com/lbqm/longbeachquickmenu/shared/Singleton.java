@@ -42,13 +42,13 @@ public class Singleton {
     public int getCycle(int week) {
         //if hillside
         if (hall == 2){
-            if (week < 13) {
+            if (week <= 13) {
                 cycle = week % 5;
             }
             if (week > 13 && week <= 19){
                 cycle = (week-1) % 5;
             }
-            if (week >= 35 && week < 47){
+            if (week >= 35 && week <= 47){
                 cycle = week % 5;
             }
             if (week > 47 && week < 50){

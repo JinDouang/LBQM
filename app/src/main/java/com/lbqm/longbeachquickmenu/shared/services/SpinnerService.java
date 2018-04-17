@@ -15,6 +15,7 @@ import com.lbqm.longbeachquickmenu.ParksideMenu;
 import com.lbqm.longbeachquickmenu.R;
 import com.lbqm.longbeachquickmenu.shared.Singleton;
 
+
 /**
  * Created by jin on 15/03/2018.
  */

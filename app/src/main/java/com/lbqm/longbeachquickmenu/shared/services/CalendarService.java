@@ -3,14 +3,18 @@ package com.lbqm.longbeachquickmenu.shared.services;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.design.internal.BottomNavigationItemView;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.TextView;
 
+import com.lbqm.longbeachquickmenu.HillsideMenu;
 import com.lbqm.longbeachquickmenu.R;
 import com.lbqm.longbeachquickmenu.shared.Singleton;
 
@@ -33,8 +37,10 @@ public class CalendarService {
 
     private final Calendar calendar = Calendar.getInstance();
 
+    Singleton singleton = new Singleton();
+
     /* Date variable that will be used to display view */
-    private static Date Date =  new Date();
+    public static Date Date =  new Date();
 
 
     public CalendarService(Context context) {
@@ -81,6 +87,13 @@ public class CalendarService {
 
                                 // Used simpleDate format to change date format and to convert date into string to setText
                                 dateview.setText(new SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(Date));
+
+                                int cycle = singleton.getCycle(Singleton.weekOfYear);
+                                int weekday = singleton.getDay();
+                                int time = singleton.getCategory();
+
+                                TextView newtext = ((Activity) context).findViewById(R.id.textViewTest2);
+                                newtext.setText(HillsideMenu.fullMeal(cycle,weekday,time));
                             }
                         }, year, month, day);
                 Window window = dialog.getWindow();
@@ -88,6 +101,7 @@ public class CalendarService {
                     dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 }
                 dialog.show();
+                Log.d("[HillsideMenu]", String.valueOf(HillsideMenu.isActive));
             }
         });
 
@@ -116,6 +130,13 @@ public class CalendarService {
 
                                 // Used simpleDate format to change date format and to convert date into string to setText
                                 dateview.setText(new SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(Date));
+
+                                int cycle = singleton.getCycle(Singleton.weekOfYear);
+                                int weekday = singleton.getDay();
+                                int time = singleton.getCategory();
+
+                                TextView newtext = ((Activity) context).findViewById(R.id.textViewTest2);
+                                newtext.setText(HillsideMenu.fullMeal(cycle,weekday,time));
                             }
                         }, year, month, day);
                 Window window = dialog.getWindow();

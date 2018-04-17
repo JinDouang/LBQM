@@ -7,8 +7,8 @@ package com.lbqm.longbeachquickmenu.shared;
 // This Singleton class will be used for annex information (categories, map...)
 public class Singleton {
 
-    public static int hall;
-    public static int cycle;
+    private static int hall;
+    private static int cycle;
     public static int day;
     public static int category;
 

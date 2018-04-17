@@ -58,14 +58,20 @@ public class SpinnerService {
                 if (HillsideMenu.isActive) {
                     Log.d("[HillsideMenu]", String.valueOf(HillsideMenu.isActive));
 
-                    TextView newtext = ((Activity) context).findViewById(R.id.menu);
-                    newtext.setText(HillsideMenu.getMenu(cycle,day,time));
+                    TextView menu = ((Activity) context).findViewById(R.id.menu);
+                    menu.setText(HillsideMenu.getMenu(cycle,day,time));
                 }
                 if (ParksideMenu.isActive) {
                     Log.d("[ParksideMenu]", String.valueOf(ParksideMenu.isActive));
+
+                    TextView menu = ((Activity) context).findViewById(R.id.menu);
+                    menu.setText(ParksideMenu.getMenu(cycle,day,time));
                 }
                 if (BeachsideMenu.isActive) {
                     Log.d("[BeachsideMenu]", String.valueOf(BeachsideMenu.isActive));
+
+                    TextView menu = ((Activity) context).findViewById(R.id.menu);
+                    menu.setText(BeachsideMenu.getMenu(cycle,day,time));
                 }
 
             }

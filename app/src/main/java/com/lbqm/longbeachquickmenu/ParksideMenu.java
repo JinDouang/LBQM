@@ -6,9 +6,13 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.lbqm.longbeachquickmenu.database.DatabaseBeachsideMenu;
+import com.lbqm.longbeachquickmenu.database.DatabaseParksideMenu;
+import com.lbqm.longbeachquickmenu.shared.Singleton;
 import com.lbqm.longbeachquickmenu.shared.services.CalendarService;
 import com.lbqm.longbeachquickmenu.shared.services.SpinnerService;
 
@@ -18,6 +22,9 @@ import com.lbqm.longbeachquickmenu.shared.services.SpinnerService;
 
 public class ParksideMenu extends AppCompatActivity {
     public static boolean isActive = false;
+
+    Singleton singleton = new Singleton();
+
 
     @Override
     protected void onStart() {
@@ -66,6 +73,30 @@ public class ParksideMenu extends AppCompatActivity {
         /* set button spinner to switch category */
         new SpinnerService(ParksideMenu.this).setSpinner();
 
-        DatabaseBeachsideMenu db = new DatabaseBeachsideMenu();
+        singleton.setHall(2);
+        int cycle = singleton.getCycle(Singleton.weekOfYear);
+        int day = singleton.getDay();
+        int time = singleton.getCategory();
+
+        TextView menu = findViewById(R.id.menu);
+
+        menu.setText(ParksideMenu.getMenu(cycle,day,time));
+    }
+
+    public static String getMenu(int cycle, int day, int time) {
+        DatabaseParksideMenu menu = new DatabaseParksideMenu();
+        StringBuilder meal = new StringBuilder();
+        int foodLength = menu.getFoodLength(cycle, day, time);
+
+        for (int i = 0; i != foodLength; i++) {
+            meal.append("\n").append(menu.getMenu(cycle, day, time).get(i).getName());
+        }
+
+        if (meal.toString().equals("")) {
+            meal = new StringBuilder("No dining hall for this day");
+        }
+
+        Log.d("[Parkside Meal Method]", String.valueOf(meal));
+        return meal.toString();
     }
 }

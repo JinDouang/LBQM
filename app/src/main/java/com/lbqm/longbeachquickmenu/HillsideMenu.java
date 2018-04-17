@@ -77,13 +77,12 @@ public class HillsideMenu extends AppCompatActivity {
         int day = singleton.getDay();
         int time = singleton.getCategory();
 
-        TextView newtext = findViewById(R.id.menu);
+        TextView menu = findViewById(R.id.menu);
 
-        newtext.setText(getMenu(cycle,day,time));
+        menu.setText(HillsideMenu.getMenu(cycle,day,time));
 
 
         /* newtext updated (see SpinnerService) */
-        /* TODO missing the view updated with date (need to change CalendarService) */
 
     }
 
@@ -103,4 +102,5 @@ public class HillsideMenu extends AppCompatActivity {
         Log.d("[Hillside Meal Method]", String.valueOf(meal));
         return meal.toString();
     }
+
 }

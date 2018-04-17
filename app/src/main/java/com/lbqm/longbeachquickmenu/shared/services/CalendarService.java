@@ -14,7 +14,9 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
+import com.lbqm.longbeachquickmenu.BeachsideMenu;
 import com.lbqm.longbeachquickmenu.HillsideMenu;
+import com.lbqm.longbeachquickmenu.ParksideMenu;
 import com.lbqm.longbeachquickmenu.R;
 import com.lbqm.longbeachquickmenu.shared.Singleton;
 
@@ -37,10 +39,10 @@ public class CalendarService {
 
     private final Calendar calendar = Calendar.getInstance();
 
-    Singleton singleton = new Singleton();
+    private Singleton singleton = new Singleton();
 
     /* Date variable that will be used to display view */
-    public static Date Date =  new Date();
+    private static Date Date =  new Date();
 
 
     public CalendarService(Context context) {
@@ -92,8 +94,24 @@ public class CalendarService {
                                 int weekday = singleton.getDay();
                                 int time = singleton.getCategory();
 
-                                TextView newtext = ((Activity) context).findViewById(R.id.menu);
-                                newtext.setText(HillsideMenu.getMenu(cycle,weekday,time));
+                                if (HillsideMenu.isActive) {
+                                    Log.d("[HillsideMenu]", String.valueOf(HillsideMenu.isActive));
+
+                                    TextView menu = ((Activity) context).findViewById(R.id.menu);
+                                    menu.setText(HillsideMenu.getMenu(cycle, weekday, time));
+                                }
+                                if (ParksideMenu.isActive) {
+                                    Log.d("[ParksideMenu]", String.valueOf(ParksideMenu.isActive));
+
+                                    TextView menu = ((Activity) context).findViewById(R.id.menu);
+                                    menu.setText(ParksideMenu.getMenu(cycle, weekday, time));
+                                }
+                                if (BeachsideMenu.isActive) {
+                                    Log.d("[BeachsideMenu]", String.valueOf(BeachsideMenu.isActive));
+
+                                    TextView menu = ((Activity) context).findViewById(R.id.menu);
+                                    menu.setText(BeachsideMenu.getMenu(cycle, weekday, time));
+                                }
                             }
                         }, year, month, day);
                 Window window = dialog.getWindow();
@@ -135,8 +153,24 @@ public class CalendarService {
                                 int weekday = singleton.getDay();
                                 int time = singleton.getCategory();
 
-                                TextView newtext = ((Activity) context).findViewById(R.id.menu);
-                                newtext.setText(HillsideMenu.getMenu(cycle,weekday,time));
+
+                                if (HillsideMenu.isActive) {
+                                    Log.d("[HillsideMenu]", String.valueOf(HillsideMenu.isActive));
+
+                                    TextView menu = ((Activity) context).findViewById(R.id.menu);
+                                    menu.setText(HillsideMenu.getMenu(cycle, weekday, time));
+                                }
+                                if (ParksideMenu.isActive) {
+
+                                    TextView menu = ((Activity) context).findViewById(R.id.menu);
+                                    menu.setText(ParksideMenu.getMenu(cycle, weekday, time));
+                                }
+                                if (BeachsideMenu.isActive) {
+                                    Log.d("[BeachsideMenu]", String.valueOf(BeachsideMenu.isActive));
+
+                                    TextView menu = ((Activity) context).findViewById(R.id.menu);
+                                    menu.setText(BeachsideMenu.getMenu(cycle, weekday, time));
+                                }
                             }
                         }, year, month, day);
                 Window window = dialog.getWindow();
@@ -150,7 +184,7 @@ public class CalendarService {
     }
 
     //Java.util.Calendar counts the days starting from Sunday, so Sunday is 1 and Saturday is 7. Our calendar starts with Monday on 0 and Sunday on 6, so this converts it to that format
-    private int convertDay(int d){
+    private int convertDay(int d) {
         if (d == 1) return 6;
         if (d == 2) return 0;
         if (d == 3) return 1;

@@ -1,5 +1,13 @@
 package com.lbqm.longbeachquickmenu.shared;
 
+import android.util.Log;
+
+import com.lbqm.longbeachquickmenu.HillsideMenu;
+import com.lbqm.longbeachquickmenu.database.DatabaseHillsideMenu;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 /**
  * Created by jin on 14/03/2018.
  */
@@ -13,8 +21,6 @@ public class Singleton {
     public static int day = -1;
     public static int category = -1;
 
-//    public static int date = -1;
-//    public static int month = -1;
     public static int weekOfYear = -1;
 
     /* List of categories */
@@ -32,6 +38,7 @@ public class Singleton {
         hall = h;
         System.out.println("Singleton hall: " + hall);
     }
+
     public int getCycle(int week) {
         //if hillside
         if (hall == 2){
@@ -48,10 +55,7 @@ public class Singleton {
                 cycle = (week-1) % 5;
             }
         }
-        //if beachside or parkside
-//        if (hall == 0 || hall == 1){
-//            cycle = (week + 1) % 5;
-//        }
+
         System.out.println("Week of year: " + week);
         System.out.println("Singleton Cycle: "+(cycle+1));
         return cycle;
@@ -64,4 +68,5 @@ public class Singleton {
     public int getCategory() {
         return category;
     }
+
 }

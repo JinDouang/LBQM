@@ -165,26 +165,7 @@ public class DatabaseParksideMenu {
         menu[0][4][2].add(new Food("Lucky Charm Cupcake", "Sweets"));
 
         //Saturday
-        //Breakfast
-        menu[0][5][0].add(new Food(" ", " "));
-        menu[0][5][0].add(new Food(" ", " "));
-        menu[0][5][0].add(new Food(" ", " "));
-        menu[0][5][0].add(new Food(" ", " "));
-
-        //Lunch
-        menu[0][5][1].add(new Food(" ", " "));
-        menu[0][5][1].add(new Food(" ", " "));
-        menu[0][5][1].add(new Food(" ", " "));
-        menu[0][5][1].add(new Food(" ", " "));
-
-        //Dinner
-        menu[0][5][2].add(new Food(" ", " "));
-        menu[0][5][2].add(new Food(" ", " "));
-        menu[0][5][2].add(new Food(" ", " "));
-        menu[0][5][2].add(new Food(" ", " "));
-        menu[0][5][2].add(new Food(" ", " "));
-        menu[0][5][2].add(new Food(" ", " "));
-        menu[0][5][2].add(new Food(" ", " "));
+        //No dining hall this day
 
         //Sunday
         //Breakfast
@@ -345,26 +326,7 @@ public class DatabaseParksideMenu {
         menu[1][4][2].add(new Food("Fruit Loop Krispy", "Sweets"));
 
         //Saturday
-        //Breakfast
-        menu[1][5][0].add(new Food(" ", " "));
-        menu[1][5][0].add(new Food(" ", " "));
-        menu[1][5][0].add(new Food(" ", " "));
-        menu[1][5][0].add(new Food(" ", " "));
-
-        //Lunch
-        menu[1][5][1].add(new Food(" ", " "));
-        menu[1][5][1].add(new Food(" ", " "));
-        menu[1][5][1].add(new Food(" ", " "));
-        menu[1][5][1].add(new Food(" ", " "));
-
-        //Dinner
-        menu[1][5][2].add(new Food(" ", " "));
-        menu[1][5][2].add(new Food(" ", " "));
-        menu[1][5][2].add(new Food(" ", " "));
-        menu[1][5][2].add(new Food(" ", " "));
-        menu[1][5][2].add(new Food(" ", " "));
-        menu[1][5][2].add(new Food(" ", " "));
-        menu[1][5][2].add(new Food(" ", " "));
+        //No dining hall this day
 
         //Sunday
         //Breakfast
@@ -527,26 +489,7 @@ public class DatabaseParksideMenu {
         menu[2][4][2].add(new Food("Cheesecake", "Sweets"));
 
         //Saturday
-        //Breakfast
-        menu[2][5][0].add(new Food(" ", " "));
-        menu[2][5][0].add(new Food(" ", " "));
-        menu[2][5][0].add(new Food(" ", " "));
-        menu[2][5][0].add(new Food(" ", " "));
-
-        //Lunch
-        menu[2][5][1].add(new Food(" ", " "));
-        menu[2][5][1].add(new Food(" ", " "));
-        menu[2][5][1].add(new Food(" ", " "));
-        menu[2][5][1].add(new Food(" ", " "));
-
-        //Dinner
-        menu[2][5][2].add(new Food(" ", " "));
-        menu[2][5][2].add(new Food(" ", " "));
-        menu[2][5][2].add(new Food(" ", " "));
-        menu[2][5][2].add(new Food(" ", " "));
-        menu[2][5][2].add(new Food(" ", " "));
-        menu[2][5][2].add(new Food(" ", " "));
-        menu[2][5][2].add(new Food(" ", " "));
+        //No dining hall this day
 
         //Sunday
         //Breakfast
@@ -707,26 +650,7 @@ public class DatabaseParksideMenu {
         menu[3][4][2].add(new Food("Mocha Cup Cake", "Sweets"));
 
         //Saturday
-        //Breakfast
-        menu[3][5][0].add(new Food(" ", " "));
-        menu[3][5][0].add(new Food(" ", " "));
-        menu[3][5][0].add(new Food(" ", " "));
-        menu[3][5][0].add(new Food(" ", " "));
-
-        //Lunch
-        menu[3][5][1].add(new Food(" ", " "));
-        menu[3][5][1].add(new Food(" ", " "));
-        menu[3][5][1].add(new Food(" ", " "));
-        menu[3][5][1].add(new Food(" ", " "));
-
-        //Dinner
-        menu[3][5][2].add(new Food(" ", " "));
-        menu[3][5][2].add(new Food(" ", " "));
-        menu[3][5][2].add(new Food(" ", " "));
-        menu[3][5][2].add(new Food(" ", " "));
-        menu[3][5][2].add(new Food(" ", " "));
-        menu[3][5][2].add(new Food(" ", " "));
-        menu[3][5][2].add(new Food(" ", " "));
+        //No dining hall this day
 
         //Sunday
         //Breakfast
@@ -887,26 +811,7 @@ public class DatabaseParksideMenu {
         menu[4][4][2].add(new Food("Whoppie Pie", "Sweets"));
 
         //Saturday
-        //Breakfast
-        menu[4][5][0].add(new Food(" ", " "));
-        menu[4][5][0].add(new Food(" ", " "));
-        menu[4][5][0].add(new Food(" ", " "));
-        menu[4][5][0].add(new Food(" ", " "));
-
-        //Lunch
-        menu[4][5][1].add(new Food(" ", " "));
-        menu[4][5][1].add(new Food(" ", " "));
-        menu[4][5][1].add(new Food(" ", " "));
-        menu[4][5][1].add(new Food(" ", " "));
-
-        //Dinner
-        menu[4][5][2].add(new Food(" ", " "));
-        menu[4][5][2].add(new Food(" ", " "));
-        menu[4][5][2].add(new Food(" ", " "));
-        menu[4][5][2].add(new Food(" ", " "));
-        menu[4][5][2].add(new Food(" ", " "));
-        menu[4][5][2].add(new Food(" ", " "));
-        menu[4][5][2].add(new Food(" ", " "));
+        //No dining hall this day
 
         //Sunday
         //Breakfast

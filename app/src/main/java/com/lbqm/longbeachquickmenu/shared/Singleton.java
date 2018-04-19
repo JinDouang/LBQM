@@ -36,13 +36,28 @@ public class Singleton {
             if (week <= 13) {
                 cycle = week % 5;
             }
-            if (week > 13 && week <= 19){
+            if (week > 13 && week < 35) {
                 cycle = (week-1) % 5;
             }
-            if (week >= 35 && week <= 47){
+            if (week >= 35 && week <= 47) {
+                cycle = (week-1) % 5;
+            }
+            if (week > 47) {
+                cycle = (week-2) % 5;
+            }
+        }
+
+        if (hall == 1 || hall == 0) {
+            if (week <= 13) {
+                cycle = (week+1) % 5;
+            }
+            if (week > 13 && week < 35) {
                 cycle = week % 5;
             }
-            if (week > 47 && week < 50){
+            if (week >= 35 && week <= 47) {
+                cycle = week % 5;
+            }
+            if (week > 47) {
                 cycle = (week-1) % 5;
             }
         }

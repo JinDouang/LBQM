@@ -50,7 +50,6 @@ public class SpinnerMenuService {
                 System.out.println("Singleton category = " + Singleton.category);
 
                 /* Code below will display our menu dynamically */
-                singleton.setHall(2);
                 TextView menu = ((Activity) context).findViewById(R.id.menu);
 
                 if (HillsideMenu.isActive) {

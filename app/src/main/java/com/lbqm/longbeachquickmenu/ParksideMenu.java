@@ -71,7 +71,7 @@ public class ParksideMenu extends AppCompatActivity {
         /* set button spinner to switch category */
         new SpinnerMenuService(ParksideMenu.this).setSpinner();
 
-        singleton.setHall(2);
+        singleton.setHall(1);
 
         TextView menu = findViewById(R.id.menu);
 

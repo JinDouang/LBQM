@@ -71,7 +71,7 @@ public class BeachsideMenu extends AppCompatActivity {
         /* set button spinner to switch category */
         new SpinnerMenuService(BeachsideMenu.this).setSpinner();
 
-        singleton.setHall(2);
+        singleton.setHall(0);
 
         TextView menu = findViewById(R.id.menu);
 

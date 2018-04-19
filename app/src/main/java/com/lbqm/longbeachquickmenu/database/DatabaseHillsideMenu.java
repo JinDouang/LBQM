@@ -176,6 +176,10 @@ public class DatabaseHillsideMenu {
         menu[0][5][2].add(new Food("Cheese Enchilada w/ Rice & Beans", "Vegetarian/Vegan (Entrée)"));
         menu[0][5][2].add(new Food("Crispy Fish Sandwich w/ Cole Slaw", "Grill"));
         menu[0][5][2].add(new Food("Chicken & Vegetable Chow Mein", "Stir Fry Station"));
+
+        //Sunday
+        //No dining hall this day
+
         //End of Cycle 1 ---------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------
 
@@ -329,6 +333,10 @@ public class DatabaseHillsideMenu {
         menu[1][5][2].add(new Food("Black Bean Veggie Burgers", "Vegetarian/Vegan (Entrée)"));
         menu[1][5][2].add(new Food("Fish & Chips", "Grill"));
         menu[1][5][2].add(new Food("Pollo Asado Tacos w/ Rice", "Stir Fry Station"));
+
+        //Sunday
+        //No dining hall this day
+
         //End of cycle 2 ---------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------
 
@@ -482,6 +490,10 @@ public class DatabaseHillsideMenu {
         menu[2][5][2].add(new Food("Vegetable Lasagna w/ Breadstick", "Vegetarian/Vegan (Entrée)"));
         menu[2][5][2].add(new Food("BBQ Pulled Pork Sandwich", "Grill"));
         menu[2][5][2].add(new Food("Shrimp Pad Thai w/ Noodles", "Stir Fry Station"));
+
+        //Sunday
+        //No dining hall this day
+
         //End of cycle 3 ---------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------
 
@@ -635,6 +647,10 @@ public class DatabaseHillsideMenu {
         menu[3][5][2].add(new Food("Eggplant Parmesan w/ Marinara", "Vegetarian/Vegan (Entrée)"));
         menu[3][5][2].add(new Food("Chicken Bacon Ranch Panini", "Grill"));
         menu[3][5][2].add(new Food("Carne Asada Tacos w/ Rice", "Stir Fry Station"));
+
+        //Sunday
+        //No dining hall this day
+
         //End of cycle 4 ---------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------
 
@@ -788,6 +804,10 @@ public class DatabaseHillsideMenu {
         menu[4][5][2].add(new Food("Vegetable Lasagna w/ Breadstick", "Vegetarian/Vegan (Entrée)"));
         menu[4][5][2].add(new Food("Grilled Ham & Cheese Sandwich", "Grill"));
         menu[4][5][2].add(new Food("Shrimp Pad Thai w/ Noodles", "Stir Fry Station"));
+
+        //Sunday
+        //No dining hall this day
+
         //End of cycle 5 ---------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------
     }

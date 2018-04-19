@@ -20,7 +20,6 @@ import com.lbqm.longbeachquickmenu.shared.services.SpinnerMenuService;
  */
 
 public class HillsideMenu extends AppCompatActivity {
-
     public static boolean isActive = false;
 
     Singleton singleton = new Singleton();

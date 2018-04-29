@@ -6,14 +6,19 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.lbqm.longbeachquickmenu.database.DatabaseParksideMenu;
 import com.lbqm.longbeachquickmenu.shared.Singleton;
 import com.lbqm.longbeachquickmenu.shared.services.CalendarMenuService;
 import com.lbqm.longbeachquickmenu.shared.services.SpinnerMenuService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jin on 25/02/2018.
@@ -72,28 +77,34 @@ public class ParksideMenu extends AppCompatActivity {
         new SpinnerMenuService(ParksideMenu.this).setSpinner();
 
         singleton.setHall(1);
+        ListView menu = findViewById(R.id.menu);
+        TextView empty = findViewById(R.id.textCenter);
 
-        TextView menu = findViewById(R.id.menu);
+        ArrayAdapter<String> listFood = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
+                ParksideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
 
-        menu.setText(ParksideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
+        if (listFood.isEmpty()) {
+            empty.setVisibility(View.VISIBLE);
+        } else {
+            empty.setVisibility(View.INVISIBLE);
+            /* Setting the android ListView's adapter to the newly created adapter */
+            menu.setAdapter(listFood);
+        }
 
         /* Menu updated (see SpinnerMenuService/CalendarMenuService) */
     }
 
-    public static String getMenu(int cycle, int day, int time) {
+    public static List<String> getMenu(int cycle, int day, int time) {
         DatabaseParksideMenu menu = new DatabaseParksideMenu();
-        StringBuilder meal = new StringBuilder();
+
+        List<String> food = new ArrayList<>();
+
         int foodLength = menu.getFoodLength(cycle, day, time);
 
         for (int i = 0; i != foodLength; i++) {
-            meal.append("\n").append(menu.getMenu(cycle, day, time).get(i).getName());
+            food.add(menu.getMenu(cycle, day, time).get(i).getName());
         }
 
-        if (meal.toString().equals("")) {
-            meal = new StringBuilder("No dining hall for this day");
-        }
-
-        Log.d("[Parkside Meal Method]", String.valueOf(meal));
-        return meal.toString();
+        return food;
     }
 }

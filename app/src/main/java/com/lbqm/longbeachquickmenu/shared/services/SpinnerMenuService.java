@@ -58,42 +58,20 @@ public class SpinnerMenuService {
                     Log.d("[HillsideMenu]", String.valueOf(HillsideMenu.isActive));
                     ArrayAdapter<String> listFood = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1,
                             HillsideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
-                    if (listFood.isEmpty()) {
-                        empty.setVisibility(View.VISIBLE);
-                        menu.setVisibility(View.INVISIBLE);
-                    } else {
-                        empty.setVisibility(View.INVISIBLE);
-                        menu.setVisibility(View.VISIBLE);
-                        menu.setAdapter(listFood);
-                    }
+                    singleton.checkEmptyMenu(listFood, menu, empty);
                 }
                 if (ParksideMenu.isActive) {
                     Log.d("[ParksideMenu]", String.valueOf(ParksideMenu.isActive));
                     ArrayAdapter<String> listFood = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1,
                             ParksideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
-                    if (listFood.isEmpty()) {
-                        empty.setVisibility(View.VISIBLE);
-                        menu.setVisibility(View.INVISIBLE);
-                    } else {
-                        empty.setVisibility(View.INVISIBLE);
-                        menu.setVisibility(View.VISIBLE);
-                        menu.setAdapter(listFood);
-                    }
+                    singleton.checkEmptyMenu(listFood, menu, empty);
                 }
                 if (BeachsideMenu.isActive) {
                     Log.d("[BeachsideMenu]", String.valueOf(BeachsideMenu.isActive));
                     ArrayAdapter<String> listFood = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1,
                             BeachsideMenu.getMenu(singleton.getCycle(Singleton.weekOfYear), singleton.getDay(), singleton.getCategory()));
-                    if (listFood.isEmpty()) {
-                        empty.setVisibility(View.VISIBLE);
-                        menu.setVisibility(View.INVISIBLE);
-                    } else {
-                        empty.setVisibility(View.INVISIBLE);
-                        menu.setVisibility(View.VISIBLE);
-                        menu.setAdapter(listFood);
-                    }
+                    singleton.checkEmptyMenu(listFood, menu, empty);
                 }
-
             }
 
             @Override

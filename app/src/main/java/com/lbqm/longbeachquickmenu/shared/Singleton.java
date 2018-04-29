@@ -1,5 +1,10 @@
 package com.lbqm.longbeachquickmenu.shared;
 
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
 /**
  * Created by jin on 14/03/2018.
  */
@@ -65,6 +70,20 @@ public class Singleton {
         System.out.println("Week of year: " + week);
         System.out.println("Singleton Cycle: " + (cycle + 1));
         return cycle;
+    }
+
+    /* Method that check if listFood is empty.
+     * If @listFood is @empty, display text center to show no dining hall
+     * else, display @menu */
+    public void checkEmptyMenu(ArrayAdapter<String> listFood, ListView menu, TextView empty) {
+        if (listFood.isEmpty()) {
+            empty.setVisibility(View.VISIBLE);
+            menu.setVisibility(View.INVISIBLE);
+        } else {
+            empty.setVisibility(View.INVISIBLE);
+            menu.setVisibility(View.VISIBLE);
+            menu.setAdapter(listFood);
+        }
     }
 
     public int getDay() {

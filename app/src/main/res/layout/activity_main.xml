@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#DCDCDC">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/linearLayout"
@@ -14,7 +15,8 @@
         app:layout_constraintBottom_toTopOf="@+id/BeachsideMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
 
         <Spinner
             android:id="@+id/spinner"
@@ -38,53 +40,56 @@
 
     <Button
         android:id="@+id/BeachsideMenu"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="167dp"
+        android:orientation="horizontal"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#B3E5FC"
+        android:background="@drawable/custom_btn"
         android:text="@string/beachside_menu"
         android:textSize="20sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/ParksideMenu"
+        android:drawableRight="@drawable/beachside_ico"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"/>
 
     <Button
         android:id="@+id/HillsideMenu"
-        android:layout_width="0dp"
-        android:layout_height="157dp"
+        android:layout_width="match_parent"
+        android:layout_height="167dp"
+        android:orientation="horizontal"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginBottom="56dp"
-        android:background="#B2DFDB"
+        android:background="@drawable/custom_btn"
         android:text="@string/hillside_menu"
         android:textSize="20sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:drawableRight="@drawable/hillside_ico"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ParksideMenu" />
+        app:layout_constraintTop_toBottomOf="@id/BeachsideMenu"/>
 
     <Button
         android:id="@+id/ParksideMenu"
-        android:layout_width="0dp"
-        android:layout_height="191dp"
+        android:layout_width="match_parent"
+        android:layout_height="167dp"
+        android:orientation="horizontal"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#FFCCBC"
+        android:background="@drawable/custom_btn"
         android:text="@string/parkside_menu"
         android:textSize="20sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/HillsideMenu"
+        android:drawableRight="@drawable/parkside_ico"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BeachsideMenu" />
+        app:layout_constraintTop_toBottomOf="@id/HillsideMenu"/>
+
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"

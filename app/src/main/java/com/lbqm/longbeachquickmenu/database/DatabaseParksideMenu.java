@@ -158,7 +158,7 @@ public class DatabaseParksideMenu {
         menu[0][4][2].add(new Food("Vegetable Noodle", "Soups 1"));
         menu[0][4][2].add(new Food("Clam Chowder", "Soups 2"));
         menu[0][4][2].add(new Food("Italian Pasta Salad", "Action Station"));
-        menu[0][4][2].add(new Food(" Pasta W/ Alfredo sauce", "Main Dish (Entrée)"));
+        menu[0][4][2].add(new Food("Pasta W/ Alfredo sauce", "Main Dish (Entrée)"));
         menu[0][4][2].add(new Food("Vegetable Lentil Stew", "Vegetarian/Vegan (Entrée)"));
         menu[0][4][2].add(new Food("Breaded Shrimp W/ Biscuit", "Grill"));
         menu[0][4][2].add(new Food("Veggie", "Pizza Station (Entrée)"));
@@ -175,8 +175,6 @@ public class DatabaseParksideMenu {
         menu[0][6][0].add(new Food("Hash Brown Triangle", "Breakfast Bar"));
 
         //Lunch
-        menu[0][6][1].add(new Food("", "Soups 1"));
-        menu[0][6][1].add(new Food(" ", "Soups 2"));
         menu[0][6][1].add(new Food("Cheese and Pepperoni", "Main Dish (Entrée)"));
         menu[0][6][1].add(new Food("Smoothie Bar", "Vegetarian/Vegan (Entrée)"));
 
@@ -194,7 +192,7 @@ public class DatabaseParksideMenu {
         //Monday
         //Breakfast
         menu[1][0][0].add(new Food("Cream of Rice", "Breakfast Bar"));
-        menu[1][0][0].add(new Food(" Pancakes", "Breakfast Bar"));
+        menu[1][0][0].add(new Food("Pancakes", "Breakfast Bar"));
         menu[1][0][0].add(new Food("kelbasa Sausage", "Breakfast Bar"));
         menu[1][0][0].add(new Food("Cottage Fries", "Breakfast Bar"));
 
@@ -265,7 +263,7 @@ public class DatabaseParksideMenu {
         //Dinner
         menu[1][2][2].add(new Food("Lentil", "Soups 1"));
         menu[1][2][2].add(new Food("Chicken Noodle", "Soups 2"));
-        menu[1][2][2].add(new Food("Avacado Veggie Sandwich", "Action Station"));
+        menu[1][2][2].add(new Food("Avocado Veggie Sandwich", "Action Station"));
         menu[1][2][2].add(new Food("Blackened Catfish", "Main Dish (Entrée)"));
         menu[1][2][2].add(new Food("Vegetable Barley Stew", "Vegetarian/Vegan (Entrée)"));
         menu[1][2][2].add(new Food("Chicken Chiotle Pasta", "Grill"));
@@ -336,11 +334,7 @@ public class DatabaseParksideMenu {
         menu[1][6][0].add(new Food("Hash Brown Triangle", "Breakfast Bar"));
 
         //Lunch
-        menu[1][6][1].add(new Food("", "Soups 1"));
-        menu[1][6][1].add(new Food("", "Soups 2"));
-        menu[1][6][1].add(new Food("", "Action Station"));
-        menu[1][6][1].add(new Food("", "Main Dish (Entrée)"));
-        menu[1][6][1].add(new Food("Smoothy Bar", "Vegetarian/Vegan (Entrée)"));
+        menu[1][6][1].add(new Food("Smoothie Bar", "Vegetarian/Vegan (Entrée)"));
         menu[1][6][1].add(new Food("Cheese and Pepperoni", "Pizza Station (Entrée)"));
 
         //Dinner
@@ -499,8 +493,6 @@ public class DatabaseParksideMenu {
         menu[2][6][0].add(new Food("Hash Brown Triangles", "Breakfast Bar"));
 
         //Lunch
-        menu[2][6][1].add(new Food("", "Soups 1"));
-        menu[2][6][1].add(new Food("", "Soups 2"));
         menu[2][6][1].add(new Food("Cheese and Pepperoni", "Main Dish (Entrée)"));
         menu[2][6][1].add(new Food("Yogurt Parfait Bar", "Vegetarian/Vegan (Entrée)"));
 
@@ -660,8 +652,6 @@ public class DatabaseParksideMenu {
         menu[3][6][0].add(new Food("Hash Brown Triangle", "Breakfast Bar"));
 
         //Lunch
-        menu[3][6][1].add(new Food("", "Soups 1"));
-        menu[3][6][1].add(new Food("", "Soups 2"));
         menu[3][6][1].add(new Food("Cheese and Pepperoni", "Main Dish (Entrée)"));
         menu[3][6][1].add(new Food("Smoothie Bar", "Vegetarian/Vegan (Entrée)"));
 
@@ -821,8 +811,6 @@ public class DatabaseParksideMenu {
         menu[4][6][0].add(new Food("Hash Brown Triangles", "Breakfast Bar"));
 
         //Lunch
-        menu[4][6][1].add(new Food("", "Soups 1"));
-        menu[4][6][1].add(new Food("", "Soups 2"));
         menu[4][6][1].add(new Food("Cheese and Pepperoni", "Main Dish (Entrée)"));
         menu[4][6][1].add(new Food("Smoothie Bar", "Vegetarian/Vegan (Entrée)"));
 

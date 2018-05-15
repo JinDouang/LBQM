@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.lbqm.longbeachquickmenu.database.DatabaseHillsideMenu;
 import com.lbqm.longbeachquickmenu.database.DatabaseParksideMenu;
 import com.lbqm.longbeachquickmenu.shared.Singleton;
 import com.lbqm.longbeachquickmenu.shared.services.CalendarMenuService;
@@ -95,7 +96,7 @@ public class HillsideMenu extends AppCompatActivity {
     }
 
     public static List<String> getMenu(int cycle, int day, int time) {
-        DatabaseParksideMenu menu = new DatabaseParksideMenu();
+        DatabaseHillsideMenu menu = new DatabaseHillsideMenu();
 
         List<String> food = new ArrayList<>();
 
